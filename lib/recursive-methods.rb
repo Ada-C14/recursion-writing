@@ -91,8 +91,8 @@ def digit_match(n, m)
   end
 end
 
-# Time complexity: O(n)
-# Space complexity: O(n)
+# Time complexity: O(n log n)
+# Space complexity: O(n log n)
 def fib(n)
   raise ArgumentError, "Cannot obtain a Fibonacci number from a negative input." if n < 0
   if n == 0
