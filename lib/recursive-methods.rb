@@ -76,5 +76,11 @@ end
 # Time complexity: ?
 # Space complexity: ?
 def digit_match(n, m)
-
+  if n <= 1 || m <= 1
+    n == m ? (return 1) : (return 0)
+  elsif n % 10 == m % 10
+    return 1 + digit_match(n/10, m/10)
+  else
+    return digit_match(n/10, m/10)
+  end
 end
