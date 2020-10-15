@@ -24,17 +24,17 @@ end
 # Time complexity: ?
 # Space complexity: ?
 def reverse_inplace(s)
-  if !s || s.length == 0
-    return ""
-  else
-    return s[-1] + reverse(s[0..-2])
-  end
+  raise NotImplementedError, "Method not implemented"
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n)
+# Space complexity: O(n)
 def bunny(n)
-  raise NotImplementedError, "Method not implemented"
+  if n == 0
+    return n
+  else
+    return 2 + bunny(n - 1)
+  end
 end
 
 # Time complexity: ?
