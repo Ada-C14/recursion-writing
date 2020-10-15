@@ -21,10 +21,16 @@ def reverse(s)
   end
 end
 
-# Time complexity: ?
-# Space complexity: ?
-def reverse_inplace(s)
-  raise NotImplementedError, "Method not implemented"
+# Time complexity: O(n/2) == O(n)
+# Space complexity: O(n/2) == O(n)
+def reverse_inplace(s, index = 0)
+  last = -index - 1
+  if index >= s.length / 2
+    return ""
+  else
+    s[index], s[last] = s[last], s[index]
+    return reverse_inplace(s, index + 1)
+  end
 end
 
 # Time complexity: O(n)
@@ -73,8 +79,8 @@ def is_palindrome(s)
   end
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n)
+# Space complexity: O(n)
 def digit_match(n, m)
   if n <= 1 || m <= 1
     n == m ? (return 1) : (return 0)
