@@ -87,7 +87,7 @@ describe "reverse" do
 end
 
 
-describe "reverse_in_place" do
+xdescribe "reverse_in_place" do
   it "will reverse 'cat'" do
     # Arrange
     string = "cat"
@@ -167,7 +167,7 @@ describe "bunny" do
   end
 end
 
-xdescribe "nested" do
+describe "nested" do
   it "will return true for empystring" do
     # Arrange
     string = ""
