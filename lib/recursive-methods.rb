@@ -23,13 +23,16 @@ end
 
 # Time complexity: O(n/2) == O(n)
 # Space complexity: O(n/2) == O(n)
-def reverse_inplace(s, index = 0)
-  last = -index - 1
+def reverse_inplace(s)
+  reverse_inplace_helper(s, 0, -1)
+end
+
+def reverse_inplace_helper(s, index, last)
   if index >= s.length / 2
     return ""
   else
     s[index], s[last] = s[last], s[index]
-    return reverse_inplace(s, index + 1)
+    return reverse_inplace_helper(s, index + 1, last - 1)
   end
 end
 
