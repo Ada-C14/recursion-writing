@@ -1,9 +1,12 @@
 # Authoring recursive algorithms. Add comments including time and space complexity for each method.
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n); n operations are completed in total (1 for each level except base case)
+# Space complexity: O(n); stack will have n+1 levels
 def factorial(n)
-    raise NotImplementedError, "Method not implemented"
+    # raise NotImplementedError, "Method not implemented"
+    raise ArgumentError, "Must pass an positive integer value or 0." if n < 0
+    return 1 if n == 0
+    return n * factorial(n - 1)
 end
 
 # Time complexity: ?
