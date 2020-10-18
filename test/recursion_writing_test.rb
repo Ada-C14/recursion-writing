@@ -74,6 +74,7 @@ describe "reverse" do
     # Assert
     expect(answer).must_equal ""
   end
+
   it "will reverse 'apple'" do
     # Arrange
     string = "apple"
@@ -167,8 +168,8 @@ describe "bunny" do
   end
 end
 
-xdescribe "nested" do
-  it "will return true for empystring" do
+describe "nested" do
+  it "will return true for empty string" do
     # Arrange
     string = ""
 

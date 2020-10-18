@@ -40,10 +40,16 @@ def bunny(n)
     2 + bunny(n - 1)
 end
 
-# Time complexity: ?
-# Space complexity: ?
-def nested(s)
-    raise NotImplementedError, "Method not implemented"
+# Time complexity: O(n); n/2 comparisons are made on average
+# Space complexity: O(n)
+# >> approx. n/2 stack frames are added to system stack (aside from empty or 1 letter strings);
+# >> no new strings are created in the process
+def nested(s, low = 0, high = s.length - 1)
+    # raise NotImplementedError, "Method not implemented"
+    return true if s.empty? || low > high
+    return false if low == high || s[low] == ")"
+
+    nested(s, low + 1, high - 1)
 end
 
 # Time complexity: ?
