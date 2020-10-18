@@ -52,10 +52,14 @@ def nested(s, low = 0, high = s.length - 1)
     nested(s, low + 1, high - 1)
 end
 
-# Time complexity: ?
-# Space complexity: ?
-def search(array, value)
-    raise NotImplementedError, "Method not implemented"
+# Time complexity: O(n); up to n comparisons
+# Space complexity: O(n); up to n stack frames added to system stack in searching through array
+def search(array, value, search_idx = 0)
+    # raise NotImplementedError, "Method not implemented"
+    return false if search_idx > array.size - 1
+    return true if array[search_idx] == value
+
+    search(array, value, search_idx + 1)
 end
 
 # Time complexity: ?
