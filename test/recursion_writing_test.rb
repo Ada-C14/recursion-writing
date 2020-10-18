@@ -360,3 +360,21 @@ describe "digit_match" do
     expect(answer).must_equal 1
   end
 end
+
+describe "fib" do
+  it "raises an argument error for negative numbers" do
+    test = -1
+    expect{ fib(test) }.must_raise ArgumentError
+  end
+
+  it "returns the correct nth number in fib sequence" do
+    test = 0
+    expect(fib(test)).must_equal 0
+
+    test = 5
+    expect(fib(test)).must_equal 5
+
+    test = 25
+    expect(fib(test)).must_equal 75025
+  end
+end

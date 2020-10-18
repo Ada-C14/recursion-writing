@@ -88,3 +88,23 @@ def digit_match(n, m, search_idx = -1, count = 0)
     n[search_idx] == m[search_idx] ? digit_match(n, m, search_idx - 1, count + 1) : digit_match(n, m, search_idx - 1, count)
 end
 
+# Time complexity: O(n) with memoization (STORED_FIBS);
+# >> without memo.: O(2^n) b/c each branch will split in two until it reaches the base cases of 0 and 1
+# Space complexity: O(n)
+# >> creation of hash STORED_FIBS
+# >> no more than n stack frames on system stack at a time
+STORED_FIBS = {}
+
+def fib(n)
+    raise ArgumentError, "Must enter a positive integer or 0" if n < 0
+    return 0 if n == 0
+    return 1 if n == 1
+    return STORED_FIBS[n] if STORED_FIBS[n]
+
+    result = fib(n-2) + fib(n-1)
+    STORED_FIBS[n] = result
+
+    return result
+end
+
+
