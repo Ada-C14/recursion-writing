@@ -28,6 +28,7 @@ def reverse_inplace(s)
     raise NotImplementedError, "Method not implemented"
 end
 
+
 # Time complexity: O(n)
 # Space complexity: O(n)
 def bunny(n)
@@ -60,4 +61,16 @@ end
 # Space complexity: ?
 def digit_match(n, m)
     raise NotImplementedError, "Method not implemented"
+end
+
+# Time Complexity: ?
+# Space Complexity: ?
+def fib(n)
+    if n == 0
+        return n
+    elsif n <= 2
+        return 1
+    else
+        return fib(n - 1) + fib(n - 2)
+    end
 end
