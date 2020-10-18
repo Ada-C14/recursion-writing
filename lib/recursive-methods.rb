@@ -19,10 +19,17 @@ def reverse(s)
     s[-1] + reverse(s[0..-2])
 end
 
-# Time complexity: ?
-# Space complexity: ?
-def reverse_inplace(s)
-    raise NotImplementedError, "Method not implemented"
+# Time complexity: O(n); n/2 swaps are made on average
+# Space complexity: O(n)
+# >> approx. n/2 stack frames are added to system stack (aside from empty or 1 letter strings);
+# >> no new strings are created in the process
+def reverse_inplace(s, low = 0, high = s.length - 1)
+    # raise NotImplementedError, "Method not implemented"
+    return s if s.empty? || s.length == 1
+    return s if low >= high
+
+    s[low], s[high] = s[high], s[low]
+    reverse_inplace(s, low + 1, high - 1)
 end
 
 # Time complexity: ?
