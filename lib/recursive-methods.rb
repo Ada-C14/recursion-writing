@@ -32,10 +32,12 @@ def reverse_inplace(s, low = 0, high = s.length - 1)
     reverse_inplace(s, low + 1, high - 1)
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n); n operations completed in total; one for each recursive call
+# Space complexity: O(n); n stack frames added until no bunnies left
 def bunny(n)
-    raise NotImplementedError, "Method not implemented"
+    # raise NotImplementedError, "Method not implemented"
+    return 0 if n == 0
+    2 + bunny(n - 1)
 end
 
 # Time complexity: ?
