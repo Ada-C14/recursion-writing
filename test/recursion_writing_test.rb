@@ -363,6 +363,13 @@ end
 describe "fib" do
   it "returns the correct fibonacci number at index n, e.g. returns 3 when n is 4" do
     expect(fib(4)).must_equal 3
+    expect(fib(5)).must_equal 5
+    expect(fib(6)).must_equal 8
+    expect(fib(7)).must_equal 13
+    expect(fib(8)).must_equal 21
+    expect(fib(9)).must_equal 34
+    expect(fib(10)).must_equal 55
+
   end
 
   it "returns 1 when n is 1 or when n is 2" do
