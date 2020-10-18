@@ -62,8 +62,8 @@ def search(array, value, search_idx = 0)
     search(array, value, search_idx + 1)
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n); avg of n/2 comparisons made
+# Space complexity: O(n); avg of n/2 stack frames added to system stack; no new strings made
 def is_palindrome(s, low = 0, high = s.length - 1)
     # raise NotImplementedError, "Method not implemented"
     return true if s.empty? || low >= high
