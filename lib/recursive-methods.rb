@@ -45,10 +45,16 @@ def nested(s)
     raise NotImplementedError, "Method not implemented"
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n)
+# Space complexity: O(n)
 def search(array, value)
-    raise NotImplementedError, "Method not implemented"
+    if array.empty?
+        return false
+    elsif array[0] == value
+        return true
+    else
+        return search(array[1..-1], value)
+    end
 end
 
 # Time complexity: O(n)

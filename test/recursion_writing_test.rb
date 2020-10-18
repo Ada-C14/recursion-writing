@@ -264,7 +264,7 @@ describe "search" do
 end
 
 describe "is_palindrome" do
-  it "will return true for emptystring" do
+  it "will return true for empty string" do
     # Arrange
     string = ""
 
