@@ -9,10 +9,14 @@ def factorial(n)
     return n * factorial(n - 1)
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n); an operation is completed for each stack frame
+# Space complexity: O(n^2)
+# >> system stack will include as many stack frames as there are letters in the string
+# >> we create a new string that is (n-1) length each time recursive case is hit
 def reverse(s)
-    raise NotImplementedError, "Method not implemented"
+    # raise NotImplementedError, "Method not implemented"
+    return s if s.empty? || s.length == 1
+    s[-1] + reverse(s[0..-2])
 end
 
 # Time complexity: ?
