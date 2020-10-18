@@ -66,6 +66,7 @@ end
 # Time Complexity: ?
 # Space Complexity: ?
 def fib(n)
+    raise ArgumentError, "Number must be greater than or equal to 0" if n < 0
     if n == 0
         return n
     elsif n <= 2
