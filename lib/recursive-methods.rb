@@ -64,8 +64,12 @@ end
 
 # Time complexity: ?
 # Space complexity: ?
-def is_palindrome(s)
-    raise NotImplementedError, "Method not implemented"
+def is_palindrome(s, low = 0, high = s.length - 1)
+    # raise NotImplementedError, "Method not implemented"
+    return true if s.empty? || low >= high
+    return false if s[low] != s[high]
+
+    is_palindrome(s, low + 1, high - 1)
 end
 
 # Time complexity: ?
