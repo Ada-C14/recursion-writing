@@ -38,7 +38,6 @@ def reverse_inplace(s)
     return reverse_helper(s)
 end
 
-
 # Time complexity: O(n)
 # Space complexity: O(n)
 def bunny(n)
@@ -85,13 +84,19 @@ def is_palindrome(s)
     end
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n)
+# Space complexity: O(n)
 def digit_match(n, m)
-    raise NotImplementedError, "Method not implemented"
+    if n <= 1 || m <= 1
+        return n == m ? 1 : 0
+    elsif n % 10 == m % 10
+        return 1 + digit_match(n / 10, m / 10)
+    else
+        return digit_match(n / 10, m / 10)
+    end
 end
 
-# Time Complexity: ?
+# Time Complexity: O(2^n)
 # Space Complexity: O(n)
 def fib(n)
     raise ArgumentError, "Number must be greater than or equal to 0" if n < 0

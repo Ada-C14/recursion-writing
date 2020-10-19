@@ -168,7 +168,7 @@ describe "bunny" do
 end
 
 describe "nested" do
-  it "will return true for empystring" do
+  it "will return true for empty string" do
     # Arrange
     string = ""
 
