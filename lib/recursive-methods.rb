@@ -13,7 +13,7 @@ def factorial(n)
 end
 
 # Time complexity: O(n)
-# Space complexity: O(1)
+# Space complexity: O(n)
 def reverse(s)
     if s.length <= 1
         return s
@@ -39,10 +39,16 @@ def bunny(n)
     end
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n)
+# Space complexity: O(n)
 def nested(s)
-    raise NotImplementedError, "Method not implemented"
+    if s.empty?
+        return true
+    elsif s[0] == "(" && s[-1] == ")"
+        return nested(s[1..-2])
+    else
+        return false
+    end
 end
 
 # Time complexity: O(n)
