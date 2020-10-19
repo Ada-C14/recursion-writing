@@ -298,7 +298,7 @@ describe "is_palindrome" do
   end
 end
 
-xdescribe "digit_match" do
+describe "digit_match" do
   it "returns 4 for 1072503891 and 62530841" do
     # Arrange
     num1 = 1072503891
@@ -357,5 +357,19 @@ xdescribe "digit_match" do
 
     # Assert
     expect(answer).must_equal 1
+  end
+
+  describe "Added Fun" do
+    it "returns n for numbers smaller than 1" do
+      sequence = fib(0)
+
+      expect(sequence).must_equal 0
+    end
+
+    it "return the nth fibonacci sequence" do
+      sequence = fib(4)
+
+      expect(sequence).must_equal 3
+    end
   end
 end
