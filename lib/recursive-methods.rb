@@ -13,7 +13,7 @@ def factorial(n)
 end
 
 # Time complexity: O(n)
-# Space complexity: O(n)
+# Space complexity: O(n^2)
 def reverse(s)
     if s.length <= 1
         return s
@@ -22,10 +22,20 @@ def reverse(s)
     end
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n)
+# Space complexity: O(n)
+def reverse_helper(s, left = 0, right = s.length - 1)
+    if left < right
+        s[left], s[right] = s[right], s[left]
+        return reverse_helper(s, left + 1, right - 1)
+    else
+        return s
+    end
+end
+
 def reverse_inplace(s)
-    raise NotImplementedError, "Method not implemented"
+    return s if s.length <= 1
+    return reverse_helper(s)
 end
 
 
@@ -40,7 +50,7 @@ def bunny(n)
 end
 
 # Time complexity: O(n)
-# Space complexity: O(n)
+# Space complexity: O(n^2)
 def nested(s)
     if s.empty?
         return true
@@ -52,7 +62,7 @@ def nested(s)
 end
 
 # Time complexity: O(n)
-# Space complexity: O(n)
+# Space complexity: O(n^2)
 def search(array, value)
     if array.empty?
         return false
@@ -64,7 +74,7 @@ def search(array, value)
 end
 
 # Time complexity: O(n)
-# Space complexity: O(n)
+# Space complexity: O(n^2)
 def is_palindrome(s)
     if s.length <= 1
         return true
@@ -82,7 +92,7 @@ def digit_match(n, m)
 end
 
 # Time Complexity: ?
-# Space Complexity: ?
+# Space Complexity: O(n)
 def fib(n)
     raise ArgumentError, "Number must be greater than or equal to 0" if n < 0
     if n == 0
