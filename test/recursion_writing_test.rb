@@ -363,3 +363,48 @@ describe "digit_match" do
     expect(answer).must_equal 1
   end
 end
+
+describe "fib" do
+  it "returns 3 for fib seq 4" do
+    # Arrange
+    num = 4
+
+    # Act
+    answer = fib(num)
+
+    # Assert
+    expect(answer).must_equal 3
+  end
+
+  it "returns 6765 for fib seq 20" do
+    # Arrange
+    num = 20
+
+    # Act
+    answer = fib(num)
+
+    # Assert
+    expect(answer).must_equal 6765
+  end
+
+  it "returns 0 for fib seq 0" do
+    # Arrange
+    num = 0
+
+    # Act
+    answer = fib(num)
+
+    # Assert
+    expect(answer).must_equal 0
+  end
+
+  it "will raise an ArgumentError if given a number not >= 0" do
+    # Arrange
+    num = -1
+
+    # Act-Assert
+    expect {
+      answer = fib(num)
+    }.must_raise ArgumentError
+  end
+end

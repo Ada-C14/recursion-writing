@@ -104,6 +104,7 @@ end
 # Time complexity: O(n), it runs n times to find the fibonacci number, so it depends on how big n is.
 # Space complexity: O(n), call stack temporarily saves the return values fib(n-1) and fib(n-2) until the method reaches the base case. So the space complexity is O(n) which depends on how big n is.
 def fib(n)
+  raise ArgumentError.new("#{n} should be a whole number") if n < 0
   if n == 0
     return 0
   elsif n == 1
