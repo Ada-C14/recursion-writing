@@ -1,49 +1,99 @@
 # Authoring recursive algorithms. Add comments including time and space complexity for each method.
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n), it runs n times and depends on how big n is.
+# Space complexity: O(n), the call stack temporarily stores information about the running program, which depends on how big n is, until the method reaches the base case. 
 def factorial(n)
-    raise NotImplementedError, "Method not implemented"
+  raise ArgumentError.new("#{n} should be larger than 0") if n < 0
+  if n == 0
+    return 1
+  else
+    return n * factorial(n-1)
+  end
+  # raise NotImplementedError, "Method not implemented"
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n), it runs n/2 times which depends on the length of the string
+# Space complexity: O(n), the call stack temporarily saves the return values s[-1] and s[0] until the method reaches the base case. So the space complexity is O(n) which depends on the length of the String.
 def reverse(s)
-    raise NotImplementedError, "Method not implemented"
+  if s.length < 2
+    return s
+  else
+    return s[-1] + reverse(s[1...-1]) + s[0]
+  end
+  # raise NotImplementedError, "Method not implemented"
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n), it runs n/2 times which depends on the length of the string
+# Space complexity: O(n), the call stack temporarily saves the return values s[0] and s[-1] until the method reaches the base case. So the space complexity is O(n) which depends on the length of the String.
 def reverse_inplace(s)
-    raise NotImplementedError, "Method not implemented"
+  if s.length < 2
+    return s
+  else
+    s[0], s[-1] = s[-1], s[0]
+    return s[0] + reverse_inplace(s[1...-1]) + s[-1]
+  end
+  # raise NotImplementedError, "Method not implemented"
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n), it runs n times and depends on how big n is.
+# Space complexity: O(n), the call stack temporarily stores information about the running program, which depends on how big n is, until the method reaches the base case. 
 def bunny(n)
-    raise NotImplementedError, "Method not implemented"
+  if n == 0
+    return 0
+  else
+    return 2 + bunny(n-1)
+  end  
+  # raise NotImplementedError, "Method not implemented"
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n), it runs n/2 times which depends on the length of the string
+# Space complexity: O(1), it's a tail recursion and no extra info is saved in call stack before it reaches to the base case if it's optimized.
 def nested(s)
-    raise NotImplementedError, "Method not implemented"
+  if s.length == 0
+    return true
+  elsif s[0] == "(" && s[-1] == ")"
+    return nested(s[1...-1])
+  else
+    return false
+  end 
+  # raise NotImplementedError, "Method not implemented"
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n), it goes thru the whole array to find whether the value is in the array or not. So it depends on the length of array.
+# Space complexity: O(1), it's a tail recursion and no extra info is saved in call stack before it reaches to the base case if it's optimized.
 def search(array, value)
-    raise NotImplementedError, "Method not implemented"
+  if value == array[0]
+    return true
+  elsif array.length == 0
+    return false
+  else
+    return search(array[1..-1], value)
+  end
+  # raise NotImplementedError, "Method not implemented"
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n), it goes thru the whole string to check whether it is palindrome. So it depends on the length of string.
+# Space complexity: O(1), it's a tail recursion and no extra info is saved in call stack before it reaches to the base case if it's optimized.
 def is_palindrome(s)
-    raise NotImplementedError, "Method not implemented"
+  if s.length == 0
+    return true
+  elsif s[0].downcase == s[-1].downcase
+    return is_palindrome(s[1...-1])
+  else
+    return false
+  end
+  # raise NotImplementedError, "Method not implemented"
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n), it goes thru the length of the larger number to check the pair of digits. So it depends on the length of the larger number.
+# Space complexity: O(n), the call stack temporarily saves the return values 0 or 1 until the method reaches the base case. So the space complexity is O(n) which depends on the length of the larger number.
 def digit_match(n, m)
-    raise NotImplementedError, "Method not implemented"
+  if n.to_s.length == 0 || m.to_s.length == 0
+    return 0
+  elsif n.to_s[-1] == m.to_s[-1]
+    return 1 + digit_match(n.to_s[0...-1], m.to_s[0...-1])
+  else
+    return 0 + digit_match(n.to_s[0...-1], m.to_s[0...-1])
+  end  
+  # raise NotImplementedError, "Method not implemented"
 end
