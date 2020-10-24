@@ -24,7 +24,7 @@ def reverse(s)
 end
 
 # Time complexity: O(n), it runs n/2 times which depends on the length of the string
-# Space complexity: O(n), call stack temporarily saves the return values s[0] and s[-1] until the method reaches the base case. So the space complexity is O(n) which depends on the length of the String.
+# Space complexity: O(n), call stack temporarily saves the return values s[1...-1] until the method reaches the base case. So the space complexity is O(n) which depends on the length of the String.
 def reverse_inplace(s)
   if s.length < 2
     return s
