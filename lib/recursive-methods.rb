@@ -30,8 +30,9 @@ def reverse_inplace(s)
     return s
   else
     s[0], s[-1] = s[-1], s[0]
-    return s[0] + reverse_inplace(s[1...-1]) + s[-1]
+    s[1...-1] = reverse_inplace(s[1...-1]) 
   end
+  return s
   # raise NotImplementedError, "Method not implemented"
 end
 
