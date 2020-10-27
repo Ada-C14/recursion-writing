@@ -1,15 +1,21 @@
 # Authoring recursive algorithms. Add comments including time and space complexity for each method.
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n) ['n' being the number of times factorial computation has to be implemented until n reaches 0]
+# Space complexity: 0(n) ['n' being the number of function calls on the stack]
 def factorial(n)
-    raise NotImplementedError, "Method not implemented"
+    raise ArgumentError if n < 0
+    return 1 if n == 0
+    return n * factorial(n - 1)
+
 end
 
 # Time complexity: ?
 # Space complexity: ?
-def reverse(s)
-    raise NotImplementedError, "Method not implemented"
+def reverse(s, i = 1)
+    return s if s == "" || s.length < 2
+    reversed = reverse(s[1..-1])
+    reversed += s[0]
+    return reversed
 end
 
 # Time complexity: ?
