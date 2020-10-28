@@ -11,8 +11,8 @@ def factorial(n)
   end
 end
 
-# Time complexity: O(n)
-# Space complexity: O(n)
+# Time complexity: O(n^2)
+# Space complexity: O(n^2)
 def reverse(s)
   if !s || s.length == 0
     return ""
@@ -98,10 +98,8 @@ end
 # Space complexity: O(n log n)
 def fib(n)
   raise ArgumentError, "Cannot obtain a Fibonacci number from a negative input." if n < 0
-  if n == 0
-    return 0
-  elsif n == 1
-    return 1
+  if n == 0 || n == 1
+    return n
   else
     return fib(n - 1) + fib(n - 2)
   end
