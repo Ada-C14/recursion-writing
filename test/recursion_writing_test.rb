@@ -360,7 +360,14 @@ describe "digit_match" do
   end
 end
 
-describe "fibonacci(n)" do
+describe "fibonacci" do
+
+  it "returns 0 for (0)" do
+    n = 0
+    answer = fibonacci(n)
+    expect(answer).must_equal 0
+  end
+
   it "returns 3 for (4)" do
     n = 4
     answer = fibonacci(n)

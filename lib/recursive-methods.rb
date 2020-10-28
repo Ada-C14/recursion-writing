@@ -8,19 +8,17 @@ def factorial(n)
     return n * factorial(n - 1)
 end
 
-# Time complexity: O(n): n being the length of s
-# Space complexity: O(n): O(n) call stack memory + O(n) new string space
+# Time complexity: O(n^2): O(n) string concatenation * O(n) recursive operation
+# Space complexity: O(n^2): O(n) call stack memory * O(n) new string
 def reverse(s, index = s.length - 1)
-    return "" if s == ""
-    return s[0] if index == 0
+    return s[0] || "" if index <= 0
     return s[index] + reverse(s, index - 1)
 end
 
 # Time complexity: O(n): n being the length of s
 # Space complexity: O(n) call stack memory
 def reverse_inplace(s, i = 0, j = s.length - 1)
-    return "" if s == ""
-    return s if i >= j
+    return s || ""  if i >= j
     swap(s, i, j)
     return reverse_inplace(s, i + 1, j - 1)
 end
@@ -35,15 +33,13 @@ end
 # Space complexity: O(n) call stack memory
 def bunny(n)
     return 0 if n == 0
-    return 2 if n == 1
-    return bunny(n - 1) + bunny(1)
+    return bunny(n - 1) + 2
 end
 
 # Time complexity: O(n)
 # Space complexity: O(n) call stack memory
 def nested(s, i = 0, j = s.length - 1)
-    return true if s == ""
-    return true if i == j - 1 && s[i] != s[j]
+    return true if i == j - 1 && s[i] != s[j] || s == ""
     return false if s[i] == s[j] || s.length.odd?
     return nested(s, i + 1, j - 1)
 end
@@ -59,8 +55,7 @@ end
 # Time complexity: O(n)
 # Space complexity: O(n) call stack memory
 def is_palindrome(s, i = 0, j = s.length - 1)
-    return true if s == ""
-    return true if i >= j && s[i] == s[j]
+    return true if i >= j && s[i] == s[j] || s == ""
     return false if s[i] != s[j]
     return is_palindrome(s, i + 1, j - 1)
 end
@@ -74,7 +69,6 @@ def digit_match(n, m, index = 0, matches = 0)
     else
         return digit_match(n, m, index + 1, matches)
     end
-
 end
 
 def lesser_length(n, m)
