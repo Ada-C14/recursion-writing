@@ -46,8 +46,8 @@ def bunny(n)
   end
 end
 
-# Time complexity: O(n/2) == O(n)
-# Space complexity: O(n/2) == O(n)
+# Time complexity: O(n^2)
+# Space complexity: O(n^2)
 def nested(s)
   if s == ""
     return true
@@ -58,8 +58,8 @@ def nested(s)
   end
 end
 
-# Time complexity: O(n)
-# Space complexity: O(n)
+# Time complexity: O(n^2)
+# Space complexity: O(n^2)
 def search(array, value)
   if array.empty?
     return false
@@ -70,8 +70,8 @@ def search(array, value)
   end
 end
 
-# Time complexity: O(n/2) == O(n)
-# Space complexity: O(n/2) == O(n)
+# Time complexity: O(n^2)
+# Space complexity: O(n^2)
 def is_palindrome(s)
   if s.empty?
     return true
@@ -82,8 +82,8 @@ def is_palindrome(s)
   end
 end
 
-# Time complexity: O(n)
-# Space complexity: O(n)
+# Time complexity: O(log n + log m)
+# Space complexity: O(log n + log m)
 def digit_match(n, m)
   if n <= 1 || m <= 1
     n == m ? (return 1) : (return 0)
