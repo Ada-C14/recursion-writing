@@ -10,7 +10,7 @@ def factorial(n)
   return n * factorial(n - 1)
 end
 
-# Time complexity: O(n)
+# Time complexity: O(n^2)
 # Space complexity: O(n^2)
 def reverse(_s)
   return _s if _s.length == 0
@@ -105,8 +105,8 @@ def is_pal(string, left, right)
   end
 end
 
-# Time complexity: Linear wrt number of digits in the smaller integer
-# Space complexity: O(nm)
+# Time complexity: Quadratic wrt the the number of digits in the smaller number
+# Space complexity: Quadratic wrt the number of digits in the smaller number
 def digit_match(_n, _m)
   n = _n.to_s
   m = _m.to_s
