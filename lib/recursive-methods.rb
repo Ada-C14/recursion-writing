@@ -12,8 +12,9 @@ def factorial(n)
   # raise NotImplementedError, "Method not implemented"
 end
 
-# Time complexity: O(n), it runs n/2 times which depends on the length of the string
-# Space complexity: O(n), call stack temporarily saves the return values s[-1] and s[0] until the method reaches the base case. So the space complexity is O(n) which depends on the length of the String.
+# Time complexity: O(n^2), it runs n/2 times depends on the length of the string for reverse method, 
+#                          but it also runs n times for string slicing. So it's O(n)*O(n) = O(n^2)
+# Space complexity: O(n^2), call stack temporarily saves the return values s[-1] and s[0] until the method reaches the base case. Also, string slicing takes O(n) memories. So the space complexity is O(n/2)*O(n) = O(n^2).
 def reverse(s)
   if s.length < 2
     return s
@@ -23,8 +24,9 @@ def reverse(s)
   # raise NotImplementedError, "Method not implemented"
 end
 
-# Time complexity: O(n), it runs n/2 times which depends on the length of the string
-# Space complexity: O(n), call stack temporarily saves the return values s[1...-1] until the method reaches the base case. So the space complexity is O(n) which depends on the length of the String.
+# Time complexity: O(n^2), it runs n/2 times which depends on the length of the string for reverse_inplace method, 
+#                          but it also runs n times for string slicing. So it's O(n)*O(n) = O(n^2)
+# Space complexity: O(n^2), call stack temporarily saves the return values s[1...-1] until the method reaches the base case. Also, string slicing takes O(n) memories. So the space complexity is O(n/2)*O(n) = O(n^2).
 def reverse_inplace(s)
   if s.length < 2
     return s
@@ -47,8 +49,9 @@ def bunny(n)
   # raise NotImplementedError, "Method not implemented"
 end
 
-# Time complexity: O(n), it runs n/2 times which depends on the length of the string.
-# Space complexity: O(1)/O(n), it's a tail recursion and no extra info is saved in call stack before it reaches to the base case if it's optimized. Otherwise, because it runs n/2 times, call stack would temporarily saves the return values. It would be O(n).
+# Time complexity: O(n^2), it runs n/2 times which depends on the length of the string for nested method, 
+#                        but it also runs n times for string slicing. So it's O(n/2)*O(n) = O(n^2)
+# Space complexity: O(1)/O(n^2), it's a tail recursion and no extra info is saved in call stack before it reaches to the base case if it's optimized. Otherwise, because it runs n/2 times, call stack would temporarily saves the return values. Also, string slicing takes O(n) memories. So the space complexity is O(n/2)*O(n) = O(n^2).
 def nested(s)
   if s.length == 0
     return true
@@ -60,8 +63,8 @@ def nested(s)
   # raise NotImplementedError, "Method not implemented"
 end
 
-# Time complexity: O(n), it goes thru the whole array to find whether the value is in the array or not. So it depends on the length of array.
-# Space complexity: O(1)/O(n), it's a tail recursion and no extra info is saved in call stack before it reaches to the base case if it's optimized. Otherwise, because it runs thru the whole array, call stack would temporarily saves the return values. It would be O(n).
+# Time complexity: O(n^2), it goes thru the whole array to find whether the value is in the array or not. So it depends on the length of array. Also, it runs n times for array slicing. So it's O(n)*O(n) = O(n^2)
+# Space complexity: O(1)/O(n^2), it's a tail recursion and no extra info is saved in call stack before it reaches to the base case if it's optimized. Otherwise, because it runs thru the whole array, call stack would temporarily saves the return values. Also, array slicing takes O(n) memories. So the space complexity is O(n)*O(n) = O(n^2).
 def search(array, value)
   if value == array[0]
     return true
@@ -73,8 +76,8 @@ def search(array, value)
   # raise NotImplementedError, "Method not implemented"
 end
 
-# Time complexity: O(n), it runs n/2 times which depends on the length of the string to check whether it is palindrome. So it depends on the length of string.
-# Space complexity: O(1)/O(n), it's a tail recursion and no extra info is saved in call stack before it reaches to the base case if it's optimized. Otherwise, because it runs thru the whole string, call stack would temporarily saves the return values. It would be O(n).
+# Time complexity: O(n^2), it runs n/2 times which depends on the length of the string to check whether it is palindrome. So it depends on the length of string. Also, it runs n times for string slicing. So it's O(n)*O(n) = O(n^2)
+# Space complexity: O(1)/O(n^2), it's a tail recursion and no extra info is saved in call stack before it reaches to the base case if it's optimized. Otherwise, because it runs thru the whole string, call stack would temporarily saves the return values. Also, string slicing takes O(n) memories. So the space complexity is O(n)*O(n) = O(n^2).
 def is_palindrome(s)
   if s.length == 0
     return true
@@ -86,8 +89,8 @@ def is_palindrome(s)
   # raise NotImplementedError, "Method not implemented"
 end
 
-# Time complexity: O(n), it goes thru the length of the larger number to check the pair of digits. So it depends on the length of the larger number.
-# Space complexity: O(n), call stack temporarily saves the return values 0 or 1 until the method reaches the base case. So the space complexity is O(n) which depends on the length of the larger number.
+# Time complexity: O(n^2), it goes thru the length of the larger number to check the pair of digits. So it depends on the length of the larger number. Also, it runs n times for two string slicing. So it's O(n)*O(2n) = O(n^2)
+# Space complexity: O(n^2), call stack temporarily saves the return values 0 or 1 until the method reaches the base case.  The method runs n times which depends on the length of the larger number. Also, string slicing takes O(n) memories. So the space complexity is O(n)*O(n) = O(n^2).
 def digit_match(n, m)
   if n.to_s.length == 0 || m.to_s.length == 0
     return 0
