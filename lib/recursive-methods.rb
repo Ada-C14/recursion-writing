@@ -46,15 +46,21 @@ def bunny(n)
   end
 end
 
-# Time complexity: O(n^2)
-# Space complexity: O(n^2)
+# Time complexity: O(n)
+# Space complexity: O(n)
 def nested(s)
-  if s == ""
-    return true
-  elsif s[0] == '(' && s[-1] == ')'
-    return nested(s[1..-2])
-  else
+  return nested_helper(s, 0, -1)
+end
+
+def nested_helper(s, first, last)
+  if !s.empty? && (s[first] != '(' || s[last] != ')')
     return false
+  else
+    if s.empty? || (first + 1 + last.abs >= s.length)     #TC: O(n)
+      return true
+    else
+      return nested_helper(s, first + 1, last - 1)        #TC: O(n)
+    end
   end
 end
 
