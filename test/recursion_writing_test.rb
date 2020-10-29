@@ -167,7 +167,7 @@ describe "bunny" do
   end
 end
 
-xdescribe "nested" do
+describe "nested" do
   it "will return true for empystring" do
     # Arrange
     string = ""
@@ -298,7 +298,7 @@ describe "is_palindrome" do
   end
 end
 
-xdescribe "digit_match" do
+describe "digit_match" do
   it "returns 4 for 1072503891 and 62530841" do
     # Arrange
     num1 = 1072503891
