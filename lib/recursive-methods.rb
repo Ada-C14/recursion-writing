@@ -11,7 +11,7 @@ def factorial(n)
   end
 end
 
-# Time complexity: O(n^2)
+# Time complexity: O(n^2) because a slice is happening O(n) in each call to reverse() and reverse() is called n times, where n is the length of the string
 # Space complexity: O(n^2)
 def reverse(s)
   if !s || s.length == 0
@@ -27,12 +27,12 @@ def reverse_inplace(s)
   return reverse_inplace_helper(s, 0, -1)
 end
 
-def reverse_inplace_helper(s, index, last)
-  if index >= s.length / 2
+def reverse_inplace_helper(s, first, last)
+  if first >= s.length / 2
     return ""
   else
-    s[index], s[last] = s[last], s[index]
-    return reverse_inplace_helper(s, index + 1, last - 1)
+    s[first], s[last] = s[last], s[first]
+    return reverse_inplace_helper(s, first + 1, last - 1)
   end
 end
 
@@ -58,15 +58,19 @@ def nested(s)
   end
 end
 
-# Time complexity: O(n^2)
+# Time complexity: O(2n) == O(n)
 # Space complexity: O(n^2)
 def search(array, value)
-  if array.empty?
+  return search_helper(array, value, 0, -1)
+end
+
+def search_helper(array, value, first, last)
+  if first >= array.length
     return false
-  elsif array[0] == value
+  elsif array[first] == value
     return true
   else
-    return search(array[1..-1], value)
+    return search_helper(array, value, first + 1, last - 1)
   end
 end
 
