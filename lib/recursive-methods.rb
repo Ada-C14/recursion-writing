@@ -24,7 +24,7 @@ end
 # Time complexity: O(n/2) == O(n)
 # Space complexity: O(n/2) == O(n)
 def reverse_inplace(s)
-  reverse_inplace_helper(s, 0, -1)
+  return reverse_inplace_helper(s, 0, -1)
 end
 
 def reverse_inplace_helper(s, index, last)
@@ -70,15 +70,20 @@ def search(array, value)
   end
 end
 
-# Time complexity: O(n^2)
-# Space complexity: O(n^2)
+# Time complexity: O(2n) == O(n)
+# Space complexity: O(n)
 def is_palindrome(s)
-  if s.empty?
+  return is_palindrome_helper(s, 0, -1)
+end
+
+def is_palindrome_helper(s, first, last)
+  if first >= s.length / 2        #Tc: O(n)
     return true
-  elsif s[0] != s[-1]
+  elsif s[first] != s[last]
     return false
   else
-    return is_palindrome(s[1..-2])
+    s[first], s[last] = s[last], s[last]
+    return is_palindrome_helper(s, first + 1, last - 1)       # TC: O(n)
   end
 end
 
