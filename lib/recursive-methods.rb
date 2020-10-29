@@ -87,8 +87,8 @@ def is_palindrome_helper(s, first, last)
   end
 end
 
-# Time complexity: O(log n + log m)
-# Space complexity: O(log n + log m)
+# Time complexity: O(log n), where n is the length of the shorter string
+# Space complexity: O(log n)
 def digit_match(n, m)
   if n <= 1 || m <= 1
     n == m ? (return 1) : (return 0)
