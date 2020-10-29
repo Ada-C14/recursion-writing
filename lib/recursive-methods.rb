@@ -59,7 +59,7 @@ def nested(s)
 end
 
 # Time complexity: O(2n) == O(n)
-# Space complexity: O(n^2)
+# Space complexity: O(n)
 def search(array, value)
   return search_helper(array, value, 0, -1)
 end
