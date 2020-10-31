@@ -17,8 +17,8 @@ def reverse(s)
     return s[-1] + reverse(s[1..-2]) + s[0]
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n)
+# Space complexity: O(n)
 def reverse_inplace(s)
     # how to reverse in place
     # raise NotImplementedError, "Method not implemented"
@@ -26,15 +26,28 @@ def reverse_inplace(s)
     # base case would be the same as the one above
 
     return s if s.length <= 1
+    return reverse_inplace_helper(s)
 
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# to review some more
+def reverse_inplace_helper(s, left = 0, right = s.length - 1)
+    if left < right
+        s[left], s[right] = s[right], s[left]
+        return reverse_inplace_helper(s, left + 1, right - 1)
+    else
+        return s
+    end
+
+end
+
+# Time complexity: O(n)
+# Space complexity: O(n)
 def bunny(n)
     # raise NotImplementedError, "Method not implemented"
     return 0 if n == 0
-    return 2 if n == 1
+    # don't need this actually
+    # return 2 if n == 1
 
     return 2 + bunny(n-1)
 end
@@ -90,8 +103,8 @@ def is_palindrome(s)
     end
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n) - linear with the input 
+# Space complexity: O(n) - the stack race is needed, linear to the input
 def digit_match(n, m)
     # raise NotImplementedError, "Method not implemented"
     # what's my base case?
@@ -100,37 +113,13 @@ def digit_match(n, m)
     # do we need a counter that would increase when there's a match?
     # How would a counter work in recursion?
 
-    if
 
-    if ( n < 10 || m < 10 ) && n % 10 == m % 10
-        return 1
+    if n <= 1 || m <= 1
+        return n == m ? 1 : 0 # review this
+    elsif n % 10 == m % 10
+        return 1 + digit_match(n/10, m/10)
+    else
+        return digit_match(n/10, m/10)
     end
-
-    # return 1 if n % 10 == m % 10
-
-
-    # if n < 10 && m < 10 && n % 10 != m % 10
-    #     return 0
-    # elsif n < 10 && m < 10 && n % 10 == m % 10
-    #     return 1
-    # else
-    #     return digit_match(n/10, m/10)
-    # end
-
-    # if n < 10 && m < 10 && n % 10 != m % 10
-    #     return 0
-    # else
-    #     return 1
-    # end
-
-
-
-
-    # return 0 if n
-
-    # if n % 10 == m % 10
-    #     return digit_match(n/10, m/10)
-    # end
-
 
 end
