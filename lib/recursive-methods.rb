@@ -1,17 +1,18 @@
 # Authoring recursive algorithms. Add comments including time and space complexity for each method.
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n)
+# Space complexity: O(n)
 def factorial(n)
     raise ArgumentError.new("You can't take the factorial of a negative number") if n < 0
     return 1 if n == 0
     return n * factorial(n-1)
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n^2)
+# Space complexity: O(n^2)
 def reverse(s)
-    raise NotImplementedError, "Method not implemented"
+    return s if s.length <= 1
+    return s[-1] + reverse(s[1..-2]) + s[0]
 end
 
 # Time complexity: ?
@@ -23,7 +24,8 @@ end
 # Time complexity: ?
 # Space complexity: ?
 def bunny(n)
-    raise NotImplementedError, "Method not implemented"
+    return 0 if n == 0
+    return 2 + bunny(n-1)
 end
 
 # Time complexity: ?
