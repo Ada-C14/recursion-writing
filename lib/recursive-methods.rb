@@ -1,22 +1,43 @@
 # Authoring recursive algorithms. Add comments including time and space complexity for each method.
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n)
+# Space complexity: O(n)
 def factorial(n)
-    raise NotImplementedError, "Method not implemented"
+    if n == 0
+        return 1
+    elsif n < 0
+        raise ArgumentError
+    else
+        return n * factorial(n-1)
+    end
 end
+
+puts factorial(5)
 
 # Time complexity: ?
 # Space complexity: ?
 def reverse(s)
-    raise NotImplementedError, "Method not implemented"
+    if s.length <=1
+        return s
+    end
+
+    return s[-1] + reverse(s[1..-2]) + s[0]
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n^2)
+# Space complexity: O(n^2)
 def reverse_inplace(s)
-    raise NotImplementedError, "Method not implemented"
+    if s.length <=1
+        return s
+    end
+
+    new_s = reverse_inplace(s[1..-2])
+    s[1..-2] = new_s
+    s[0] , s[-1] = s[-1], s[0]
+    return s
 end
+
+puts reverse_inplace("hello world")
 
 # Time complexity: ?
 # Space complexity: ?
