@@ -86,8 +86,7 @@ describe "reverse" do
   end
 end
 
-
-describe "reverse_in_place" do
+xdescribe "reverse_in_place" do
   it "will reverse 'cat'" do
     # Arrange
     string = "cat"
@@ -213,7 +212,7 @@ xdescribe "nested" do
   end
 end
 
-xdescribe "search" do
+describe "search" do
   it "will return false for empty array" do
     # Arrange
     item = "a"
@@ -263,7 +262,7 @@ xdescribe "search" do
     end      
 end
 
-xdescribe "is_palindrome" do
+describe "is_palindrome" do
   it "will return true for emptystring" do
     # Arrange
     string = ""
@@ -358,4 +357,38 @@ xdescribe "digit_match" do
     # Assert
     expect(answer).must_equal 1
   end
+end
+
+describe "Fibonacci" do
+  it "will find the fibonacci of 5" do
+    # Arrange
+    num = 5
+
+    # Act
+    answer = fibonacci(num)
+
+    # Assert
+    expect(answer).must_equal 5
+  end
+  it "will find the fibonacci of 10" do
+    # Arrange
+    num = 10
+
+    # Act
+    answer = fibonacci(num)
+
+    # Assert
+    expect(answer).must_equal 55
+  end
+  it "will find the fibonacci of 0" do
+    # Arrange
+    num = 0
+
+    # Act
+    answer = fibonacci(num)
+
+    # Assert
+    expect(answer).must_equal 0
+  end
+
 end
