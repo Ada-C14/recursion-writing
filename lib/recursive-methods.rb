@@ -36,10 +36,12 @@ def nested(s)
     return nested(s[1..-2])
 end
 
-# Time complexity: ?
-# Space complexity: ?
-def search(array, value)
-    raise NotImplementedError, "Method not implemented"
+# Time complexity: O(n)
+# Space complexity: O(n)
+def search(array, value, index = 0)
+    return true if array[index] == value
+    return false if index >= array.length
+    return search(array, value, index + 1)
 end
 
 # Time complexity: ?
