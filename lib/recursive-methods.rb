@@ -1,9 +1,21 @@
 # Authoring recursive algorithms. Add comments including time and space complexity for each method.
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n)
+# The number of times that the method will be called increases
+# proportionally as you increase the size of n.
+# "n - 1" controls the main method and there are no other methods
+# called inside of the main method.
+# Space complexity: O(n)
+# The method only needs to track the local variable and the return value
+# of each function call for factorial(n). There are no other data structures
+# being created. So, the space complexity is how many stack frames
+# need to be added to the stack, which is based on how many times it runs.
 def factorial(n)
-    raise NotImplementedError, "Method not implemented"
+    raise ArgumentError if n < 0
+
+    return 1 if n == 0
+
+    return n * factorial(n - 1)
 end
 
 # Time complexity: ?
