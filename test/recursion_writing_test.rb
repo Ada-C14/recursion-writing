@@ -87,7 +87,7 @@ describe "reverse" do
 end
 
 
-xdescribe "reverse_in_place" do
+describe "reverse_in_place" do
   it "will reverse 'cat'" do
     # Arrange
     string = "cat"

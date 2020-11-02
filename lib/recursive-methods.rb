@@ -15,10 +15,14 @@ def reverse(s)
     return s[-1] + reverse(s[1..-2]) + s[0]
 end
 
-# Time complexity: ?
-# Space complexity: ?
-def reverse_inplace(s)
-    raise NotImplementedError, "Method not implemented"
+# Time complexity: O(n)
+# Space complexity: O(n)
+def reverse_inplace(s, first = 0, last = - 1)
+    return s if first >= s.length / 2
+    i = s[first]
+    s[first] = s[last]
+    s[last] = i
+    return reverse_inplace(s, first + 1, last - 1)
 end
 
 # Time complexity: O(n)
