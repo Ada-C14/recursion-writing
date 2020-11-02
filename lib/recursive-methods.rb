@@ -32,6 +32,7 @@ end
 
 
 def inplace_helper(s, i)
+
     return s if i == s.length / 2
     s[0 + i], s[-1 - i] = s[-1 - i], s[0 + i]
 
@@ -63,13 +64,26 @@ end
 # Time complexity: ?
 # Space complexity: ?
 def search(array, value)
-    raise NotImplementedError, "Method not implemented"
+    if array.length == 0
+        return false
+    elsif array[0] == value
+        return true
+    else
+        return search(array[1..-1], value)
+    end
 end
 
 # Time complexity: ?
 # Space complexity: ?
 def is_palindrome(s)
-    raise NotImplementedError, "Method not implemented"
+    if s.length < 2
+        return true
+    elsif s[0] != s[-1]
+        return false
+    else
+        return is_palindrome(s[1..-2])
+
+    end
 end
 
 # Time complexity: ?
