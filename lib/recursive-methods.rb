@@ -1,7 +1,7 @@
 a# Authoring recursive algorithms. Add comments including time and space complexity for each method.
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: ? O(n)
+# Space complexity: ? O(1)
 def factorial(n)
     # raise NotImplementedError, "Method not implemented"
     t_fact(n, 1)
@@ -13,8 +13,8 @@ def t_fact(n, i)
     return t_fact(n - 1, i * n)
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: ?O(n)
+# Space complexity: ? O(n^2)
 def reverse(s)
     # raise NotImplementedError, "Method not implemented"
     return s if string.length <= 1
@@ -23,8 +23,8 @@ def reverse(s)
 
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: ? O(n)
+# Space complexity: ? O(n^2)
 def reverse_inplace(s)
 
     inplace_helper(s, 0)
@@ -39,8 +39,8 @@ def inplace_helper(s, i)
     inplace_helper( s, i + 1)
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: ? O(n)
+# Space complexity: ? O(n)
 def bunny(n)
     if n == 1
         return 2
@@ -49,8 +49,8 @@ def bunny(n)
     end
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: ? O(n^2)
+# Space complexity: ? O(n^2)
 def nested(s)
     if s.length < 1
         return true
@@ -61,8 +61,8 @@ def nested(s)
     end
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: ? O(n^2)
+# Space complexity: ? O(n^2)
 def search(array, value)
     if array.length == 0
         return false
@@ -73,8 +73,8 @@ def search(array, value)
     end
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: ? O(n^2)
+# Space complexity: ? O(n^2)
 def is_palindrome(s)
     if s.length < 2
         return true
@@ -82,12 +82,11 @@ def is_palindrome(s)
         return false
     else
         return is_palindrome(s[1..-2])
-
     end
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: ? O(n^2)
+# Space complexity: ? O(n^2)
 def digit_match(n, m)
     n = n.to_s
     m = m.to_s
