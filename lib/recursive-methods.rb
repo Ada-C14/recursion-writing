@@ -76,10 +76,29 @@ def bunny(n)
     return 2 + bunny(n - 1)
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n)
+# nested(s) is called only one time. nested_helper(s) is called a number of times
+# that increase proportionally with an increase in the length of s. Within
+# each function call, there are no methods being called which increase the
+# time complexity.
+# Space complexity: O(n)
+# The number of frames that get placed on the call stack increases linearly.
+# The function is not creating additional data structures beyond the local
+# variables.
+def nested_helper(s, first = 0, last = s.length - 1)
+    if first > last
+        return true
+    elsif first == last
+        return false
+    elsif s[first] == "(" && s[last] == ")"
+        return nested_helper(s, first + 1, last - 1)
+    else
+        return false
+    end
+end
+
 def nested(s)
-    raise NotImplementedError, "Method not implemented"
+    return nested_helper(s)
 end
 
 # Time complexity: ?
