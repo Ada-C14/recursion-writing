@@ -34,12 +34,33 @@ def reverse(s)
     return s[s.length - 1] + reverse(s[1...s.length - 1]) + s[0]
 end
 
-# Time complexity: ?
-# Space complexity: ?
-def reverse_inplace(s)
-    raise NotImplementedError, "Method not implemented"
+# Time complexity: O(n)
+# reverse_inplace(s) is called once. reverse_inplace_helper(s) is called
+# a number of times proportional to the length of the word being reversed
+# (when you double the length of the word, the number of times the function
+# runs approximately doubles). There are no functions being called inside
+# of the reverse_inplace or reverse_inplace_helper functions that increase
+# the time complexity.
+# Space complexity: O(n)
+# Each call of the function adds a stack frame to the stack. Aside from the
+# information in these frames, there is only the temp variable being created,
+# which as a constant does not increase the space complexity.
+def reverse_inplace_helper(s, first = 0, last = s.length - 1)
+    if first >= last
+        return s
+    else
+        temp = s[first]
+        s[first] = s[last]
+        s[last] = temp
+        return reverse_inplace_helper(s, first + 1, last - 1)
+    end
 end
 
+def reverse_inplace(s)
+    return reverse_inplace_helper(s)
+end
+
+reverse_inplace("apple")
 # Time complexity: ?
 # Space complexity: ?
 def bunny(n)
