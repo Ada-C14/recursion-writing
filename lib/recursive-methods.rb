@@ -8,7 +8,11 @@ def factorial(n)
 end
 
 def t_fact(n, i)
-    return i if n == 1
+    if n < 0
+        raise ArgumentError, "number is less than zero"
+    else
+        return i if n == 1 || n == 0
+    end
 
     return t_fact(n - 1, i * n)
 end
@@ -17,7 +21,7 @@ end
 # Space complexity: ? O(n^2)
 def reverse(s)
     # raise NotImplementedError, "Method not implemented"
-    return s if string.length <= 1
+    return s if s.length <= 1
 
     return s[-1] + reverse(s[0..-2])
 
@@ -42,6 +46,8 @@ end
 # Time complexity: ? O(n)
 # Space complexity: ? O(n)
 def bunny(n)
+    return 0 if n == 0
+
     if n == 1
         return 2
     else
@@ -90,8 +96,7 @@ end
 def digit_match(n, m)
     n = n.to_s
     m = m.to_s
-    p n
-    p m
+
     if n.length == 0 || m.length == 0
         return 0
     elsif n[-1] == m[-1]
