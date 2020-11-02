@@ -101,10 +101,27 @@ def nested(s)
     return nested_helper(s)
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n)
+# search(array, value) is called once and search_helper
+# is called at most array.length times, so the time that it takes to run
+# increases linearly with the size of the array.
+# Space complexity: O(n)
+# The number of stack frames in use increases in a linear fashion with the
+# length of the array. It is not creating new arrays or new data structures
+# as it runs, though, so the function calls are the controlling factor
+# in the space complexity.
+def search_helper(array, value, index = 0)
+    if array[index] == value
+        return true
+    elsif index >= array.length
+        return false
+    else
+        return search_helper(array, value, index + 1)
+    end
+end
+
 def search(array, value)
-    raise NotImplementedError, "Method not implemented"
+    return search_helper(array, value)
 end
 
 # Time complexity: ?
