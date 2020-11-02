@@ -298,7 +298,7 @@ describe "is_palindrome" do
   end
 end
 
-xdescribe "digit_match" do
+describe "digit_match" do
   it "returns 4 for 1072503891 and 62530841" do
     # Arrange
     num1 = 1072503891
@@ -358,4 +358,38 @@ xdescribe "digit_match" do
     # Assert
     expect(answer).must_equal 1
   end
+end
+
+describe "fib" do
+  it "returns 1st fib number" do
+    num = 0
+
+    answer = fib(num)
+
+    expect(answer).must_equal 0
+  end
+
+  it "returns the 4th fib number" do
+    num = 4
+
+    answer = fib(num)
+
+    expect(answer).must_equal 3
+  end
+
+  it "raises an error for a negative number" do
+    num = -9
+
+    expect{fib(num)}.must_raise ArgumentError
+  end
+
+  it "returns the 10th fib number" do
+    num = 10
+
+    answer = fib(num)
+
+    expect(answer).must_equal 55
+  end
+
+
 end

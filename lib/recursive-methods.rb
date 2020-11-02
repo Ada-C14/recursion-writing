@@ -52,8 +52,22 @@ def is_palindrome(s, first = 0, last = -1)
     return is_palindrome(s, first + 1, last - 1)
 end
 
-# Time complexity: ?
-# Space complexity: ?
-def digit_match(n, m)
-    raise NotImplementedError, "Method not implemented"
+# Time complexity: O(n^2)? - because of to_s?
+# Space complexity: O(n^2) - again because of to_s?
+def digit_match(n, m, index = -1, match = 0)
+    if n.to_s[index] == nil || m.to_s[index] == nil
+        return match
+    end
+    if n.to_s[index] == m.to_s[index]
+        match += 1
+    end
+    return digit_match(n, m, index - 1, match)
+end
+
+
+def fib(n)
+    raise ArgumentError.new("cannot have negative numbers in fibonacci sequence") if n < 0
+    return 0 if n == 0
+    return 1 if n == 1
+    return fib(n - 1) + fib(n - 2)
 end
