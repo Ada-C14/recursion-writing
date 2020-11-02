@@ -44,10 +44,12 @@ def search(array, value, index = 0)
     return search(array, value, index + 1)
 end
 
-# Time complexity: ?
-# Space complexity: ?
-def is_palindrome(s)
-    raise NotImplementedError, "Method not implemented"
+# Time complexity: O(n)
+# Space complexity: O(n)
+def is_palindrome(s, first = 0, last = -1)
+    return false if s[first] != s[last]
+    return true if first == s.length
+    return is_palindrome(s, first + 1, last - 1)
 end
 
 # Time complexity: ?
