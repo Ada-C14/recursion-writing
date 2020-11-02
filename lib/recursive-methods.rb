@@ -18,10 +18,20 @@ def factorial(n)
     return n * factorial(n - 1)
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n^2)
+# The number of times the reverse(s) method will be called scales proportionally
+# as you increase the length of the string being reversed. On its own that's O(n).
+# Then, inside of each method call of reverse(s), the split method is being called
+# on the string, which is another O(n) method happening inside of an O(n) method.
+# Space complexity: O(n^2)
+# The space complexity of the stack frames being added to the stack is O(n^2)
+# because of the rate the functions are being called. There are new strings
+# being created every time that the method is called, but they are used up
+# after each call and do not appreciably affect the space complexity.
 def reverse(s)
-    raise NotImplementedError, "Method not implemented"
+    return s if s.length <= 1
+
+    return s[s.length - 1] + reverse(s[1...s.length - 1]) + s[0]
 end
 
 # Time complexity: ?
