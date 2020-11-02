@@ -51,7 +51,13 @@ end
 # Time complexity: ?
 # Space complexity: ?
 def nested(s)
-    raise NotImplementedError, "Method not implemented"
+    if s.length < 1
+        return true
+    elsif s[0] == s[-1]
+        return false
+    else
+        return nested(s[1..-2])
+    end
 end
 
 # Time complexity: ?
