@@ -60,11 +60,20 @@ def reverse_inplace(s)
     return reverse_inplace_helper(s)
 end
 
-reverse_inplace("apple")
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n)
+# The number of times that bunny(n) will be called increases linearly to how
+# many bunnies there are (the size of n). Within each call of the function
+# the only operations being performed are basic arithmetic, so there is no
+# nested time complexities.
+# Space complexity: O(n)
+# How much space on the stack is used increases proportional to increasing
+# the size of n. Within each function call there are no additional data
+# structures using up space beyond the argument variables and return values
+# tracked by the stack frame.
 def bunny(n)
-    raise NotImplementedError, "Method not implemented"
+    return 0 if n <= 0
+
+    return 2 + bunny(n - 1)
 end
 
 # Time complexity: ?
