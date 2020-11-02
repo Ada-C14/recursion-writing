@@ -21,17 +21,19 @@ def reverse_inplace(s)
     raise NotImplementedError, "Method not implemented"
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n)
+# Space complexity: O(n)
 def bunny(n)
     return 0 if n == 0
     return 2 + bunny(n-1)
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n^2)
+# Space complexity: O(n^2)
 def nested(s)
-    raise NotImplementedError, "Method not implemented"
+    return true if s == ""
+    return false unless s[0] == "(" && s[-1] == ")"
+    return nested(s[1..-2])
 end
 
 # Time complexity: ?
