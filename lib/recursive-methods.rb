@@ -89,5 +89,15 @@ end
 # Time complexity: ?
 # Space complexity: ?
 def digit_match(n, m)
-    raise NotImplementedError, "Method not implemented"
+    n = n.to_s
+    m = m.to_s
+    p n
+    p m
+    if n.length == 0 || m.length == 0
+        return 0
+    elsif n[-1] == m[-1]
+        return 1 + digit_match(n[0..-2], m[0..-2])
+    else
+        return digit_match(n[0..-2], m[0..-2])
+    end
 end
