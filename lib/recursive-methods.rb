@@ -8,10 +8,12 @@ def factorial(n)
     return n * factorial(n-1)
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n) - It takes n recursions for each character
+# Space complexity: O(n^2) - n is number of characters
+# String objects with length n * (n-1) * (n-2) ... are made
 def reverse(s)
-    
+    return s if s.length <= 1
+    return reverse(s[1..-1]) + s[0]
 end
 
 # Time complexity: ?
