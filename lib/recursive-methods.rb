@@ -74,7 +74,7 @@ def is_palindrome(s, first = 0, sub_length = s.length)
 end
 
 
-# Time complexity: O(n) where n is the largest number
+# Time complexity: O(logn) where n is the largest number
 # Space complexity: O(n)
 def digit_match(n, m, count = 0)
     if n/10 == 0 && m/10 == 0
@@ -87,6 +87,7 @@ def digit_match(n, m, count = 0)
     else
         return n%10 == m%10 ? digit_match(n/10, m/10, count + 1) : digit_match(n/10, m/10, count)
     end
+
 end
 
 def fib(n)
