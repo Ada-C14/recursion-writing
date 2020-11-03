@@ -3,7 +3,7 @@
 # Time complexity: O(n), where n is the number handed to the method.
 # Space complexity: O(n) as well
 def factorial(n)
-    raise ArgumentError, "argument must be positive integer or zero" if n.negative?
+    raise ArgumentError if n < 0
     return 1 if n == 0 || n == 1
     return n * factorial(n-1)
 end
@@ -15,7 +15,7 @@ def reverse(s)
     return s[-1] + reverse(s[0..-2])
 end
 
-# Time complexity: O(n^2), where n is the length of the string passed
+# Time complexity: O(n^2), where n is the length of the string passed .. does the replace impact this as well??
 # Space complexity: O(n^2)
 def reverse_inplace(s)
     return s if s.length <= 1
@@ -65,12 +65,12 @@ def is_palindrome(s)
     end
 end
 
-# Time complexity: O(n^2 + m^2) where n & m are length of their respective digits
+# Time complexity: how do you account for the method in the method?? Guess: O(n^2 + m^2) where n & m are length of their respective digits
 # Space complexity: O(n^2 + m^2)
 def digit_match(n, m)
     counter = 0
-    n = n.digits if n.class == Integer
-    m = m.digits if m.class == Integer
+    n = n.digits
+    m = m.digits
     return digit_match_helper(n, m, counter)
 end
 
