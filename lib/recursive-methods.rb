@@ -22,10 +22,29 @@ def reverse(s)
     end
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n) the reverse_inplace method without the helper, is O(1),
+# the if statement is O(n), and the recursion is O(n), they are not nested, so we are still at O(n)
+# Space complexity: O(n) because we have as many stack calls as we have steps
+def reverse_inplace_helper(s, start_position, end_position)
+    if start_position >= end_position
+        return
+    end
+
+    temp = s[start_position]
+    s[start_position] = s[end_position]
+    s[end_position] = temp
+
+    reverse_inplace_helper(s, start_position + 1, end_position -1 )
+end
+
 def reverse_inplace(s)
-    raise NotImplementedError, "Method not implemented"
+    if s == nil || s.length == 0
+        return ""
+    else
+        reverse_inplace_helper(s, 0, s.length - 1)
+        return s
+    end
+
 end
 
 # Time complexity: ?
