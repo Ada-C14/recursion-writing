@@ -40,16 +40,36 @@ def bunny_tail(n, ears)
     return bunny_tail(n-1, ears+2)
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n) - has to look through each character
+# Space complexity: O(n) - system stack
 def nested(s)
-    raise NotImplementedError, "Method not implemented"
+    return nested_helper(s, 0, s.length, 0)
+end
+
+def nested_helper(s, char, fin, parens)
+    return true if char == fin
+    if s[char] == '('
+        nested_helper(s, char+1, fin, parens + 1)
+    else
+        return false if parens == 0
+        nested_helper(s, char+1, fin, parens - 1)
+    end
 end
 
 # Time complexity: ?
 # Space complexity: ?
 def search(array, value)
-    raise NotImplementedError, "Method not implemented"
+    return search_helper(array, value, 0, array.length)
+end
+
+def search_helper(array, value, idx, len)
+    if idx == len
+        return false
+    elsif array[idx] == value
+        return true
+    else
+        return search_helper(array, value, idx+1, len)
+    end
 end
 
 # Time complexity: ?
