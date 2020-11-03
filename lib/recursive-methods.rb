@@ -17,10 +17,12 @@ def reverse(s)
     return s[-1] + reverse(s[1..-2]) + s[0]
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: ? O(n^2)
+# Space complexity: ? O(n^2)
 def reverse_inplace(s)
-    raise NotImplementedError, "Method not implemented"
+    return s if s.length <= 1
+
+    return s[-1] + reverse(s[1..-2]) + s[0]
 end
 
 # Time complexity: O(n)
@@ -32,10 +34,11 @@ def bunny(n)
 end
 
 
-# Time complexity: ?
-# Space complexity: ?
-def nested(s)
-    raise NotImplementedError, "Method not implemented"
+# Time complexity: O(s)
+# Space complexity: 0(s)
+#
+def nested(s, first, last)
+
 end
 
 # Time complexity: O(n)
@@ -58,14 +61,14 @@ end
 
 # # Time complexity: ?
 # # Space complexity: ?
-def digit_match(n, m)
-    raise NotImplementedError, "Method not implemented"
+def match_digits(n,m)
+
 end
 
-# Time complexity: ?
-# Space complexity: ?
+puts match_digits(0,0)
+# Time complexity: O(n) 
+# Space complexity: O(n)
 def fibonacci(num)
     return num if num <= 1
     fibonacci(num - 1) + fibonacci(num - 2)
 end
-puts fibonacci(6)
