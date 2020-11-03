@@ -5,6 +5,7 @@
 def factorial(n)
     raise ArgumentError if n < 0
     return 1 if n <= 1
+
     return n * factorial(n-1)
 end
 
@@ -13,6 +14,7 @@ end
 # String objects with length n * (n-1) * (n-2) ... are made
 def reverse(s)
     return s if s.length <= 1
+
     return reverse(s[1..-1]) + s[0]
 end
 
@@ -20,11 +22,13 @@ end
 # Space complexity: O(n) - For the system stack
 def reverse_inplace(s)
     return s if s.length <= 1
+
     return reverse_inplace_helper(s, 0, s.length-1)
 end
 
 def reverse_inplace_helper(s, start, fin)
     return s if start == fin
+
     s[start], s[fin] = s[fin], s[start]
     reverse_inplace_helper(s, start+1, fin - 1)
 end
@@ -37,6 +41,7 @@ end
 
 def bunny_tail(n, ears)
     return ears if n == 0
+
     return bunny_tail(n-1, ears+2)
 end
 
@@ -48,10 +53,12 @@ end
 
 def nested_helper(s, char, fin, parens)
     return true if char == fin
+
     if s[char] == '('
         nested_helper(s, char+1, fin, parens + 1)
     else
         return false if parens == 0
+
         nested_helper(s, char+1, fin, parens - 1)
     end
 end
@@ -76,6 +83,7 @@ end
 # Space complexity: O(n) - system stack
 def is_palindrome(s)
     return true if s.empty?
+
     return is_palindrome_helper(s, 0, s.length - 1)
 end
 
@@ -89,8 +97,26 @@ def is_palindrome_helper(s, start, fin)
     end
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(logn) - Where n is the larger of n or m.
+# Reduces n by a factor of 10 every recursion
+# Space complexity: O(logn) - System stack
 def digit_match(n, m)
-    raise NotImplementedError, "Method not implemented"
+    # Handle edge case where one or both numbers are zero
+    if n == 0 || m == 0
+        if (n % 10) == (m % 10)
+            return 1
+        else
+            return 0
+        end
+    end
+    return digit_match_helper(n, m, 0)
+end
+
+def digit_match_helper(n, m, digits)
+    return digits if n == 0 || m == 0
+    if (n % 10) == (m % 10)
+        return digit_match_helper(n/10, m/10, digits+1)
+    else
+        return digit_match_helper(n/10, m/10, digits)
+    end
 end
