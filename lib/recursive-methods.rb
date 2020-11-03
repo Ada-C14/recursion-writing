@@ -75,11 +75,19 @@ def is_palindrome(s)
   return is_palindrome(s[1...-1])
 end
 
-# Time complexity: O(log n)
-# Space complexity: O(log n)
+# Time complexity: O(log10(n))
+# Space complexity: O(log10(n))
 def digit_match(n, m)
   return 1 if n == 0 && m == 0
   return 0 if n <= 1 || m <= 1
 
   return n % 10 == m % 10 ? (1 + digit_match(n / 10, m / 10)) : digit_match(n / 10, m / 10)
+end
+
+# Time complexity: O(n^2)
+# Space complexity: O(n)
+def fibonacci(n)
+  return n if n < 2
+
+  return fibonacci(n - 1) + fibonacci(n - 2)
 end
