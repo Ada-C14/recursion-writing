@@ -126,8 +126,18 @@ end
 
 # Time complexity: ?
 # Space complexity: ?
+def is_palindrome_helper(s, first = 0, last = s.length - 1)
+    if first >= last
+        return true
+    elsif s[first] != s[last]
+        return false
+    else
+        return is_palindrome_helper(s, first + 1, last - 1)
+    end
+end
+
 def is_palindrome(s)
-    raise NotImplementedError, "Method not implemented"
+    return is_palindrome_helper(s)
 end
 
 # Time complexity: ?
