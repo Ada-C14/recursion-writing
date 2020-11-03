@@ -12,10 +12,14 @@ def factorial(n)
     end
 end
 
-# Time complexity:
-# Space complexity:
+# Time complexity: O(n^2) the slicing method is O(n) itself, within another O(n) method
+# Space complexity: O(n^2) the slicing method is O(n) itself, within another O(n) method
 def reverse(s)
-
+    if s == nil || s.length == 0
+        return ""
+    else
+        return reverse(s[1..-1]) + s[0]
+    end
 end
 
 # Time complexity: ?
