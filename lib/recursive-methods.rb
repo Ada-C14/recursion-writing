@@ -49,8 +49,8 @@ def nested(s)
 
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: o(n)
+# Space complexity: o(n)
 def search(array, value)
     return false if array.length == 0
     rest = value[1...array.length - 1]
@@ -72,23 +72,17 @@ end
 # Time complexity: o(n)
 # Space complexity: o(n)
 def digit_match(n, m)
-    return 0 if n <= 0
-    return 0 if m <= 0
+    n = n.to_s
+    m = m.to_s
+    return 0 if n.length == 0 || m.length == 0
 
-    # n = n.to_s
-    # m = m.to_s
-    first_n = n[0]
-    first_m = m[0]
-    last_n = n[-1]
-    last_m = m[1]
-    rest_n = n[1...n.length - 1]
-    rest_m = m[1...m.length - 1]
-    total = 0
-    if first_n == first_m || last_n == last_m
-        total += 1
-        digit_match(rest_n, rest_m)
-    else
-        return 0
+    last_n = n[n.length - 1]
+    last_m = m[m.length - 1]
+    rest_n = n[0...n.length - 1]
+    rest_m = m[0...m.length - 1]
+    current_character_score = 0
+    if last_n == last_m
+        current_character_score = 1
     end
-    return total
+    return current_character_score + digit_match(rest_n, rest_m)
 end
