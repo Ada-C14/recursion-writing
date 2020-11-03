@@ -35,13 +35,22 @@ end
 # Time complexity: ?
 # Space complexity: ?
 def nested(s)
-    raise NotImplementedError, "Method not implemented"
-end
+    return true if s == "" || s.length == 0
+    return false if s.length.odd?
+    while s[0] == '(' && s[-1] == ')'
+        return nested(s[1..-2])
+    end
+        return false
+    end
 
 # Time complexity: ?
 # Space complexity: ?
-def search(array, value)
-    raise NotImplementedError, "Method not implemented"
+def search(array, value, i = 0)
+    return true if array[i] == value
+    return false if i >= array.length
+    return search(array, value, i + 1)
+
+
 end
 
 # Time complexity: ?
