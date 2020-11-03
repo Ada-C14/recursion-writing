@@ -47,10 +47,12 @@ def reverse_inplace(s)
 
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n) because we will make n iterations in total for bunny(n)
+# Space complexity: O(n) because we will make 1 stack call per step, i.e. n in total for bunny(n)
 def bunny(n)
-    raise NotImplementedError, "Method not implemented"
+    return 2 if n == 1
+    return 0 if n == 0
+    return 2 + bunny(n-1)
 end
 
 # Time complexity: ?
