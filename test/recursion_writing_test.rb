@@ -6,34 +6,34 @@ require_relative '../lib/recursive-methods'
 Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 
 
-# describe "factorial" do
-#   it "will find the factorial of 0" do
-#     # Arrange
-#     num = 0
-#     # Act
-#     answer = factorial(num)
-#     # Assert
-#     expect(answer).must_equal 1
-#   end
-#
-#   it "will find the factorial of 5" do
-#     # Arrange
-#     num = 5
-#     # Act
-#     answer = factorial(num)
-#     # Assert
-#     expect(answer).must_equal 5*4*3*2*1
-#   end
-#
-#   it "will raise an ArgumentError if given a number not >= 0" do
-#     # Arrange
-#     num = -1
-#     # Act-Assert
-#     expect {
-#       answer = factorial(num)
-#     }.must_raise ArgumentError
-#   end
-# end
+describe "factorial" do
+  it "will find the factorial of 0" do
+    # Arrange
+    num = 0
+    # Act
+    answer = factorial(num)
+    # Assert
+    expect(answer).must_equal 1
+  end
+
+  it "will find the factorial of 5" do
+    # Arrange
+    num = 5
+    # Act
+    answer = factorial(num)
+    # Assert
+    expect(answer).must_equal 5*4*3*2*1
+  end
+
+  it "will raise an ArgumentError if given a number not >= 0" do
+    # Arrange
+    num = -1
+    # Act-Assert
+    expect {
+      answer = factorial(num)
+    }.must_raise ArgumentError
+  end
+end
 
 describe "reverse" do
   it "will reverse 'cat'" do
@@ -177,7 +177,7 @@ xdescribe "nested" do
   end
 end
 
-xdescribe "search" do
+describe "search" do
   it "will return false for empty array" do
     # Arrange
     item = "a"

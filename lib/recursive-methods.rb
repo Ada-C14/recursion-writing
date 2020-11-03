@@ -26,10 +26,12 @@ def reverse_inplace(s)
     return s if s == ""
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n)
+# Space complexity: O(n)
 def bunny(n)
-    raise NotImplementedError, "Method not implemented"
+    return 0 if n == 0
+    return 2 if n == 1
+    return 2 + bunny(n-1)
 end
 
 # Time complexity: ?
@@ -38,12 +40,16 @@ def nested(s)
     raise NotImplementedError, "Method not implemented"
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n)
+# Space complexity: O(n^2)
 def search(array, value)
-    raise NotImplementedError, "Method not implemented"
+    return false if array.empty?
+    if array[0] == value
+        return true
+    else
+        return search(array[1..-1], value)
+    end
 end
-
 # Time complexity: O(n)
 # Space complexity: O(n)
 def is_palindrome(s)
