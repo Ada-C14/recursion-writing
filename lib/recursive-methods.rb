@@ -29,10 +29,15 @@ def reverse_inplace_helper(s, start, fin)
     reverse_inplace_helper(s, start+1, fin - 1)
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n) - one recursion for each bunny
+# Space complexity: O(n) - system stack
 def bunny(n)
-    raise NotImplementedError, "Method not implemented"
+    return bunny_tail(n, 0)
+end
+
+def bunny_tail(n, ears)
+    return ears if n == 0
+    return bunny_tail(n-1, ears+2)
 end
 
 # Time complexity: ?
