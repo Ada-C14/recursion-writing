@@ -18,32 +18,14 @@ def reverse(s)
     return s[-1] + reverse(s[1..-2]) + s[0]
 end
 
-# Time complexity: O(n^2)
-# Space complexity: O(n^2)
+# Time complexity: O(n^2) - because n recursive calls, inside which we are slicing smaller...
+# Space complexity: O(n)??? because it is just saving over the same variable?
+
 def reverse_inplace(s)
-  if s.length <= 1
-    return s
-  end
+  return s if s.length <= 1
 
-  return s[-1] + reverse(s[1..-2]) + s[0]
+  s.replace(s[-1] + reverse_inplace(s[1..-2]) + s[0])
 end
-
-##########DOESn'T WORK:  why couldn't I get this version to work?
-# def reverse_inplace(s)
-#   p s
-#
-#   if s.length <= 1
-#      return s
-#   end
-#
-#   temp = s[0]
-#   s[0] = s[-1]
-#   s[-1] = temp
-#
-#   p s
-#   reverse_inplace(s[1..-2])
-#   return s
-# end
 
 # Time complexity: O(n) - n recursive calls
 # Space complexity: O(n) - n recursive calls, all else constant

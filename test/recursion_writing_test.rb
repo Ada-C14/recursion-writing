@@ -86,51 +86,89 @@ describe "reverse" do
   end
 end
 
-
 describe "reverse_in_place" do
   it "will reverse 'cat'" do
     # Arrange
     string = "cat"
-
     # Act
     answer = reverse_inplace(string)
-
     # Assert
     expect(answer).must_equal "tac"
+    expect(string).must_equal(answer)
   end
-
   it "will reverse 'a'" do
     # Arrange
     string = "a"
-
     # Act
     answer = reverse_inplace(string)
-
     # Assert
     expect(answer).must_equal "a"
+    expect(string).must_equal(answer)
   end
-
   it "will reverse empty string " do
     # Arrange
     string = ""
-
     # Act
     answer = reverse_inplace(string)
-
     # Assert
     expect(answer).must_equal ""
+    expect(string).must_equal(answer)
   end
   it "will reverse 'apple'" do
     # Arrange
     string = "apple"
-
     # Act
     answer = reverse_inplace(string)
-
     # Assert
     expect(answer).must_equal "elppa"
+    expect(string).must_equal(answer)
   end
 end
+
+# describe "reverse_in_place" do
+#   it "will reverse 'cat'" do
+#     # Arrange
+#     string = "cat"
+#
+#     # Act
+#     answer = reverse_inplace(string)
+#
+#     # Assert
+#     expect(answer).must_equal "tac"
+#   end
+#
+#   it "will reverse 'a'" do
+#     # Arrange
+#     string = "a"
+#
+#     # Act
+#     answer = reverse_inplace(string)
+#
+#     # Assert
+#     expect(answer).must_equal "a"
+#   end
+#
+#   it "will reverse empty string " do
+#     # Arrange
+#     string = ""
+#
+#     # Act
+#     answer = reverse_inplace(string)
+#
+#     # Assert
+#     expect(answer).must_equal ""
+#   end
+#   it "will reverse 'apple'" do
+#     # Arrange
+#     string = "apple"
+#
+#     # Act
+#     answer = reverse_inplace(string)
+#
+#     # Assert
+#     expect(answer).must_equal "elppa"
+#   end
+# end
 
 describe "bunny" do
   it "returns 0 for 0 bunnies" do
