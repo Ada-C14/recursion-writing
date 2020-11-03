@@ -35,42 +35,42 @@ describe "factorial" do
   end
 end
 
-describe "reverse" do
-  it "will reverse 'cat'" do
-    # Arrange
-    string = "cat"
-    # Act
-    answer = reverse(string)
-    # Assert
-    expect(answer).must_equal "tac"
-  end
-
-  it "will reverse 'a'" do
-    # Arrange
-    string = "a"
-    # Act
-    answer = reverse(string)
-    # Assert
-    expect(answer).must_equal "a"
-  end
-
-  it "will reverse empty string " do
-    # Arrange
-    string = ""
-    # Act
-    answer = reverse(string)
-    # Assert
-    expect(answer).must_equal ""
-  end
-  it "will reverse 'apple'" do
-    # Arrange
-    string = "apple"
-    # Act
-    answer = reverse(string)
-    # Assert
-    expect(answer).must_equal "elppa"
-  end
-end
+# describe "reverse" do
+#   it "will reverse 'cat'" do
+#     # Arrange
+#     string = "cat"
+#     # Act
+#     answer = reverse(string)
+#     # Assert
+#     expect(answer).must_equal "tac"
+#   end
+#
+#   it "will reverse 'a'" do
+#     # Arrange
+#     string = "a"
+#     # Act
+#     answer = reverse(string)
+#     # Assert
+#     expect(answer).must_equal "a"
+#   end
+#
+#   it "will reverse empty string " do
+#     # Arrange
+#     string = ""
+#     # Act
+#     answer = reverse(string)
+#     # Assert
+#     expect(answer).must_equal ""
+#   end
+#   it "will reverse 'apple'" do
+#     # Arrange
+#     string = "apple"
+#     # Act
+#     answer = reverse(string)
+#     # Assert
+#     expect(answer).must_equal "elppa"
+#   end
+# end
 
 
 describe "reverse_in_place" do
