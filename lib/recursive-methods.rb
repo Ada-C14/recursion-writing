@@ -45,22 +45,42 @@ def bunny(n)
     end
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n^2)
+# Space complexity: O(n^2)
 def nested(s)
-    raise NotImplementedError, "Method not implemented"
+    if s.empty?
+        return true
+    elsif s[0] == s[-1]
+        return false
+    else
+        return nested(s[1..-2])
+    end
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n^2)
+# Space complexity: O(n^2)
 def search(array, value)
-    raise NotImplementedError, "Method not implemented"
+    if array.empty?
+        return false
+    elsif array[0] == value
+        return true
+    else
+        return search(array[1..-1], value)
+    end
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n^2)
+# Space complexity: O(n^2)
 def is_palindrome(s)
-    raise NotImplementedError, "Method not implemented"
+    if s.length == 1 || s.empty?
+        return true
+    end
+
+    if s[0] == s[-1]
+        is_palindrome(s[1..-2])
+    else
+        return false
+    end
 end
 
 # Time complexity: ?
