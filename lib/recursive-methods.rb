@@ -73,7 +73,7 @@ def search(array, value)
   # return search(array, value)
 end
 
-# Time complexity: O(n)
+# Time complexity: O(n
 # Space complexity: O(n)
 def is_palindrome(s)
   return true if s.length < 2
