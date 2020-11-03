@@ -16,10 +16,17 @@ def reverse(s)
     return reverse(s[1..-1]) + s[0]
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n) - It will take n/2 swaps to reverse the string
+# Space complexity: O(n) - For the system stack
 def reverse_inplace(s)
-    raise NotImplementedError, "Method not implemented"
+    return s if s.length <= 1
+    return reverse_inplace_helper(s, 0, s.length-1)
+end
+
+def reverse_inplace_helper(s, start, fin)
+    return s if start == fin
+    s[start], s[fin] = s[fin], s[start]
+    reverse_inplace_helper(s, start+1, fin - 1)
 end
 
 # Time complexity: ?
