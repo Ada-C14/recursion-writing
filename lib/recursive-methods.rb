@@ -75,11 +75,12 @@ end
 
 
 # Time complexity: O(logn) where n is the largest number
-# Space complexity: O(n)
+# Space complexity: O(logn)
 def digit_match(n, m, count = 0)
     if n/10 == 0 && m/10 == 0
         return n == m ? count + 1 : count
     end
+
     if n/10 == 0
         return m % 10 == n ? count + 1 : count
     elsif m/10 == 0
@@ -87,7 +88,6 @@ def digit_match(n, m, count = 0)
     else
         return n%10 == m%10 ? digit_match(n/10, m/10, count + 1) : digit_match(n/10, m/10, count)
     end
-
 end
 
 def fib(n)
