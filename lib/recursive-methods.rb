@@ -39,8 +39,8 @@ end
 
 puts reverse_inplace("hello world")
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n)
+# Space complexity: O(n)
 def bunny(n)
     return 0 if n == 0
     return 2 + bunny(n - 1)
@@ -52,10 +52,16 @@ def nested(s)
     raise NotImplementedError, "Method not implemented"
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n^2)
+# Space complexity: O(n^2)
 def search(array, value)
-    raise NotImplementedError, "Method not implemented"
+    if array[0] == value
+        return true
+    elsif array.length < 1
+        return false
+    else
+        return search(array[1..-1], value)
+    end
 end
 
 # Time complexity: ?
