@@ -87,10 +87,18 @@ def nested(s)
 end
 
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n^2) because there is a splitting method within a loop
+# Space complexity: O(n^2) because there are as many stack calls as there are steps
 def search(array, value)
-    raise NotImplementedError, "Method not implemented"
+    i = array.length - 1
+    if i < 0
+        return false
+    elsif array[i] == value
+        return true
+    else
+        array = array[0...i]
+        return search(array, value)
+    end
 end
 
 # Time complexity: ?
