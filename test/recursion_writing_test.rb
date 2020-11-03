@@ -167,7 +167,7 @@ describe "bunny" do
   end
 end
 
-xdescribe "nested" do
+describe "nested" do
   it "will return true for empystring" do
     # Arrange
     string = ""
@@ -213,7 +213,7 @@ xdescribe "nested" do
   end
 end
 
-xdescribe "search" do
+describe "search" do
   it "will return false for empty array" do
     # Arrange
     item = "a"
@@ -227,43 +227,43 @@ xdescribe "search" do
   end
 
   it "will return true when looking for something in the array" do
-  # Arrange
-  item = "a"
-  array = ["b", "c", "a"]
+    # Arrange
+    item = "a"
+    array = ["b", "c", "a"]
 
-  # Act
-  answer = search(array, item)
+    # Act
+    answer = search(array, item)
 
-  # Assert
-  expect(answer).must_equal true
+    # Assert
+    expect(answer).must_equal true
   end
 
   it "will return false when looking for something not in the array" do
     # Arrange
     item = "x"
     array = ["b", "c", "a"]
-  
+
     # Act
     answer = search(array, item)
-  
+
     # Assert
     expect(answer).must_equal false
-    end
+  end
 
-    it "will return true when finding something at the front of the array" do
-      # Arrange
-      item = "b"
-      array = ["b", "c", "a"]
-    
-      # Act
-      answer = search(array, item)
-    
-      # Assert
-      expect(answer).must_equal true
-    end      
+  it "will return true when finding something at the front of the array" do
+    # Arrange
+    item = "b"
+    array = ["b", "c", "a"]
+
+    # Act
+    answer = search(array, item)
+
+    # Assert
+    expect(answer).must_equal true
+  end
 end
 
-xdescribe "is_palindrome" do
+describe "is_palindrome" do
   it "will return true for emptystring" do
     # Arrange
     string = ""
@@ -298,7 +298,7 @@ xdescribe "is_palindrome" do
   end
 end
 
-xdescribe "digit_match" do
+describe "digit_match" do
   it "returns 4 for 1072503891 and 62530841" do
     # Arrange
     num1 = 1072503891
@@ -334,7 +334,7 @@ xdescribe "digit_match" do
     # Assert
     expect(answer).must_equal 3
   end
-  
+
   it "returns 1 for (0, 0)" do
     # Arrange
     num1 = 0
@@ -346,7 +346,7 @@ xdescribe "digit_match" do
     # Assert
     expect(answer).must_equal 1
   end
-  
+
   it "returns 1 for (10, 20)" do
     # Arrange
     num1 = 10
@@ -357,5 +357,48 @@ xdescribe "digit_match" do
 
     # Assert
     expect(answer).must_equal 1
+  end
+end
+
+
+
+# Sam's reverse in line tests
+
+describe "reverse_in_place" do
+  it "will reverse 'cat'" do
+    # Arrange
+    string = "cat"
+    # Act
+    answer = reverse_inplace(string)
+    # Assert
+    expect(answer).must_equal "tac"
+    expect(string).must_equal(answer)
+  end
+  it "will reverse 'a'" do
+    # Arrange
+    string = "a"
+    # Act
+    answer = reverse_inplace(string)
+    # Assert
+    expect(answer).must_equal "a"
+    expect(string).must_equal(answer)
+  end
+  it "will reverse empty string " do
+    # Arrange
+    string = ""
+    # Act
+    answer = reverse_inplace(string)
+    # Assert
+    expect(answer).must_equal ""
+    expect(string).must_equal(answer)
+  end
+  it "will reverse 'apple'" do
+    # Arrange
+    string = "apple"
+    # Act
+    answer = reverse_inplace(string)
+    # Assert
+    expect(answer).must_equal "elppa"
+    expect(string).must_equal(answer)
   end
 end
