@@ -44,7 +44,6 @@ def reverse_inplace(s)
         reverse_inplace_helper(s, 0, s.length - 1)
         return s
     end
-
 end
 
 # Time complexity: O(n) because we will make n iterations in total for bunny(n)
@@ -55,11 +54,38 @@ def bunny(n)
     return 2 + bunny(n-1)
 end
 
-# Time complexity: ?
-# Space complexity: ?
-def nested(s)
-    raise NotImplementedError, "Method not implemented"
+# Time complexity: O(n) because there is the actual method has complexity of O(1) without its helper
+# and the helper has no nesting, just the recursion which will take place n times
+# Space complexity: O(n) same reasoning because for every step, we have one stack call
+def nested_helper(s, start_position, end_position, left, right)
+    @left = left
+    @right = right
+
+    if start_position > end_position
+        return @left == @right
+    end
+
+    if s[start_position] == '('
+        @left += 1
+    end
+
+    if s[end_position] == ')'
+        @right += 1
+    end
+
+    nested_helper(s, start_position + 1, end_position -1, @left, @right)
 end
+
+def nested(s)
+    if s == nil || s.length == 0
+        return true
+    else
+        left = 0
+        right = 0
+        nested_helper(s, 0, s.length - 1, left, right)
+    end
+end
+
 
 # Time complexity: ?
 # Space complexity: ?
