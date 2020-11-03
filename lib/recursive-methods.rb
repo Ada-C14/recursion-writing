@@ -56,8 +56,8 @@ def nested_helper(s, char, fin, parens)
     end
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n) - Linear search
+# Space complexity: O(n) - system stack
 def search(array, value)
     return search_helper(array, value, 0, array.length)
 end
@@ -72,10 +72,21 @@ def search_helper(array, value, idx, len)
     end
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n) - n/2 recursions
+# Space complexity: O(n) - system stack
 def is_palindrome(s)
-    raise NotImplementedError, "Method not implemented"
+    return true if s.empty?
+    return is_palindrome_helper(s, 0, s.length - 1)
+end
+
+def is_palindrome_helper(s, start, fin)
+    if start == fin
+        return true
+    elsif s[start] != s[fin]
+        return false
+    else
+        is_palindrome_helper(s, start+1, fin-1)
+    end
 end
 
 # Time complexity: ?
