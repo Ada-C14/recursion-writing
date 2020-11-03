@@ -34,7 +34,7 @@ def reverse_inplace_helper(s, start_position, end_position)
     s[start_position] = s[end_position]
     s[end_position] = temp
 
-    reverse_inplace_helper(s, start_position + 1, end_position -1 )
+    reverse_inplace_helper(s, start_position+1, end_position-1 )
 end
 
 def reverse_inplace(s)
@@ -73,7 +73,7 @@ def nested_helper(s, start_position, end_position, left, right)
         @right += 1
     end
 
-    nested_helper(s, start_position + 1, end_position -1, @left, @right)
+    nested_helper(s, start_position+1, end_position-1, @left, @right)
 end
 
 def nested(s)
@@ -101,8 +101,8 @@ def search(array, value)
     end
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n^2) because there is a slicing method of O(n) within a loop of O(n)
+# Space complexity: O(n^2) because for every step, there is one stack call
 def is_palindrome(s)
     if s.length < 2
         return true
@@ -113,8 +113,21 @@ def is_palindrome(s)
     end
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n^2) because there are parallel slicing methods within a loop
+# Space complexity: O(n^2) because there are as many stack calls as there are steps
+def digit_match_helper(n,m,count)
+    @count = count
+    if n.length == 0 || m.length ==0
+        return count
+    elsif
+        n[-1] == m[-1]
+        @count +=1
+    end
+
+    digit_match_helper(n[0..-2],m[0..-2], @count)
+end
+
 def digit_match(n, m)
-    raise NotImplementedError, "Method not implemented"
+    count = 0
+    digit_match_helper(n.to_s,m.to_s,count)
 end
