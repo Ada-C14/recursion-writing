@@ -87,7 +87,7 @@ describe "reverse" do
 end
 
 
-describe "reverse_in_place" do
+xdescribe "reverse_in_place" do
   it "will reverse 'cat'" do
     # Arrange
     string = "cat"
@@ -132,7 +132,7 @@ describe "reverse_in_place" do
   end
 end
 
-describe "bunny" do
+xdescribe "bunny" do
   it "returns 0 for 0 bunnies" do
     # Arrange
     count = 0
