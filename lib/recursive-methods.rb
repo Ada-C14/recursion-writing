@@ -164,3 +164,13 @@ end
 def digit_match(n, m)
     return digit_match_helper(n.to_s, m.to_s)
 end
+
+# Time complexity: ?
+# I cannot figure out the time or space complexity on this but
+# I sure would like to know what it is!
+def fib(n)
+    return 0 if n == 0
+    return 1 if n == 1
+
+    return fib(n - 1) + fib(n - 2)
+end

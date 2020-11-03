@@ -358,3 +358,49 @@ describe "digit_match" do
     expect(answer).must_equal 1
   end
 end
+
+describe "fib" do
+  it "returns 0 when given integer 0" do
+    # Arrange
+    integer = 0
+
+    # Act
+    answer = fib(integer)
+
+    # Assert
+    expect(answer).must_equal 0
+  end
+
+  it "returns 1 when given integer 1" do
+    # Arrange
+    integer = 1
+
+    # Act
+    answer = fib(integer)
+
+    # Assert
+    expect(answer).must_equal 1
+  end
+
+  it "returns 3 when given integer 4" do
+    # Arrange
+    integer = 4
+
+    # Act
+    answer = fib(integer)
+
+    # Assert
+    expect(answer).must_equal 3
+  end
+
+  it "returns 377 when given integer 14" do
+    # Arrange
+    integer = 14
+
+    # Act
+    answer = fib(integer)
+
+    # Assert
+    expect(answer).must_equal 377
+  end
+end
