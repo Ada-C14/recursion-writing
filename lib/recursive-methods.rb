@@ -13,10 +13,14 @@ def factorial(n)
     end
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n^2)
+# Space complexity: O(n^2)
 def reverse(s)
-    raise NotImplementedError, "Method not implemented"
+    if s.length <= 1
+        return s
+    else
+        return s[-1] + reverse(s[1..-2]) + s[0]
+    end
 end
 
 # Time complexity: ?
