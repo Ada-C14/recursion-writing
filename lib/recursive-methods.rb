@@ -140,8 +140,27 @@ def is_palindrome(s)
     return is_palindrome_helper(s)
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n)
+# digit_match is called once. digit_match_helper is called a number of times
+# one more than the number of digits in the shorter number. Therefore, the
+# time complexity is controlled by the length of the shorter number and
+# increases linearly when that number gets longer.
+# Space complexity: O(n)
+# The space taken up on the stack is controlled by the number of times the
+# methods are called, which is linearly proportional to the length of the
+# shorter number. The methods do not create data structures that would
+# meaningfully increase the amount of space used, just creating one string
+# for each number and two local variables.
+def digit_match_helper(n, m, n_check = n.length - 1, m_check = m.length - 1)
+    if m_check < 0 || n_check < 0
+        return 0
+    elsif m[m_check] == n[n_check]
+        return 1 + digit_match_helper(n, m, n_check - 1, m_check - 1)
+    else
+        return 0 + digit_match_helper(n, m, n_check - 1, m_check - 1)
+    end
+end
+
 def digit_match(n, m)
-    raise NotImplementedError, "Method not implemented"
+    return digit_match_helper(n.to_s, m.to_s)
 end
