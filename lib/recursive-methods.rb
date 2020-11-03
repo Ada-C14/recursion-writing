@@ -22,9 +22,8 @@ def reverse(s)
     end
 end
 
-# Time complexity: ?
-# Space complexity: ?
-# ASK
+# Time complexity: O(n)
+# Space complexity: O(n)
 def reverse_inplace(s, first = 0, last = s.length - 1)
     if last <= first
         return s
@@ -60,7 +59,6 @@ end
 
 # Time complexity: O(n^2)
 # Space complexity: O(n^2)
-# ASK
 def search(array, value)
     if array.empty?
         return false
@@ -71,15 +69,15 @@ def search(array, value)
     end
 end
 
-# Time complexity: O(n^2)
-# Space complexity: O(n^2)
-def is_palindrome(s)
-    if s.length < 2
+# Time complexity: O(n)
+# Space complexity: O(n)
+def is_palindrome(s, first = 0, last = s.length - 1)
+    if last <= first
         return true
-    elsif s[0] != s[-1]
+    elsif s[first] != s[last]
         return false
     else
-        return is_palindrome(s[1..-2])
+        return is_palindrome(s, first + 1, last - 1)
     end
 end
 
