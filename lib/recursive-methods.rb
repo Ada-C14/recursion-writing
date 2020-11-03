@@ -165,9 +165,14 @@ def digit_match(n, m)
     return digit_match_helper(n.to_s, m.to_s)
 end
 
-# Time complexity: ?
-# I cannot figure out the time or space complexity on this but
-# I sure would like to know what it is!
+# Time complexity: O(2^n)
+# When the method is called, it calls itself twice. Therefore it is being called
+# twice a number of times that depends on the input. How many times two
+# is multiplied by itself is controlled by the size of the input.
+# Space complexity: O(2^n)
+# There are no data structures being created and nothing for the program to
+# track besides the data that is part of the stack frame. Therefore the
+# space complexity is determined by the time complexity.
 def fib(n)
     return 0 if n == 0
     return 1 if n == 1
