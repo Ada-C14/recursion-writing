@@ -131,3 +131,11 @@ def digit_match(n, m)
     count = 0
     digit_match_helper(n.to_s,m.to_s,count)
 end
+
+
+
+# fibonacci numbers
+def fibonacci (a)
+    return a if (a == 0 || a == 1)
+    return fibonacci(a-1) + fibonacci(a-2)
+end
