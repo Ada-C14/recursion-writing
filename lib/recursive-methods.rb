@@ -1,7 +1,7 @@
 # Authoring recursive algorithms. Add comments including time and space complexity for each method.
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n), where n is the length
+# Space complexity: O(n), uses up some space in the call stack until it reaches the base case
 def factorial(n)
     if n == 0
         return 1
@@ -12,8 +12,8 @@ def factorial(n)
     end
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n^2)
+# Space complexity: O(n^2)
 def reverse(s)
     if s.length <= 1
         return s
@@ -22,18 +22,28 @@ def reverse(s)
     return s[-1] + reverse(s[1..-2]) + s[0]
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n)
+# Space complexity: O(n)
 def reverse_inplace(s)
-    if s.length <= 1
+    first = 0
+    last = s.length - 1
+    return reverse_inplace_helper(s, first, last)
+end
+
+def reverse_inplace_helper(s, first = 0, last = s.length - 1)
+    if first > last
         return s
     end
 
-    return s[-1] + reverse_inplace(s[1..-2]) + s[0]
+    temp = s[first]
+    s[first] = s[last]
+    s[last] = temp
+
+    return reverse_inplace_helper(s, first + 1, last - 1)
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n)
+# Space complexity: O(n)
 def bunny(n)
     if n == 0
         return 0
@@ -42,8 +52,8 @@ def bunny(n)
     return 2 + bunny(n-1)
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n^2)
+# Space complexity: O(n^2)
 def nested(s)
     if s.length < 1
         return true
@@ -57,8 +67,8 @@ def nested(s)
 
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n^2)
+# Space complexity: O(n^2)
 def search(array, value)
     if array.empty?
         return false
@@ -69,8 +79,8 @@ def search(array, value)
     end
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n^2)
+# Space complexity: O(n^2)
 def is_palindrome(s)
     if s.length < 1
         return true
@@ -81,21 +91,22 @@ def is_palindrome(s)
     end
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n^2)?
+# Space complexity: O(n^2)?
 def digit_match(n, m)
-    matching_numbers = 0
-    # num1 = 1072503891
-    # num2 = 62530841
-    #     num1 = 0
-    #     num2 = 62530841
+    n = n.to_s
+    m = m.to_s
 
-    if n[-1] == m[-1]
-        return matching_numbers += 1
-    else
-        return 0
+    count = 0
+    return digit_match_counter(n, m, count)
+end
+
+def digit_match_counter(n, m, count)
+    if n.length == 0 || m.length == 0
+        return count
+    elsif n[-1] == m[-1]
+        count += 1
     end
 
-    return digit_match(n[-2..0], m[-1..0])
-
+    return digit_match_counter(n[0..-2], m[0..-2], count)
 end
