@@ -36,10 +36,18 @@ end
 
 # Time complexity: O(s)
 # Space complexity: 0(s)
-#
-def nested(s, first, last)
 
+def nested(s, i = 1 )
+    return true if (i - 1) * 2 >= s.size
+
+    if s[i - 1] == "(" && s[-i] == ")"
+        return nested(s, i + 1)
+    end
+    return false
 end
+puts nested("()")
+puts nested("((((()))))")
+puts nested("(")
 
 # Time complexity: O(n)
 # Space complexity: O(n)
@@ -59,16 +67,27 @@ def is_palindrome(s)
     return is_palindrome(s[1..-2])
 end
 
-# # Time complexity: ?
-# # Space complexity: ?
-def match_digits(n,m)
+# # Time complexity: O(n)
+# # Space complexity: O(n)
+def digit_match(n, m , i = -1, count = 0)
+    n = n.to_s
+    m = m.to_s
+
+    return count if n[i].nil? || m[i].nil?
+
+    if n[i] == m[i]
+       return digit_match(n, m, i - 1, count + 1)
+    end
+
+    return digit_match(n, m, i - 1, count)
 
 end
 
-puts match_digits(0,0)
-# Time complexity: O(n) 
+# Time complexity: O(2^n)
 # Space complexity: O(n)
 def fibonacci(num)
     return num if num <= 1
+
     fibonacci(num - 1) + fibonacci(num - 2)
 end
+
