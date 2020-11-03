@@ -120,3 +120,11 @@ def digit_match_helper(n, m, digits)
         return digit_match_helper(n/10, m/10, digits)
     end
 end
+
+# Time complexity: O(n) - One recursion for every n
+# Space compexlity: O(n) - System stack
+def fib(n, f0 = 0, f1 = 1, index = 1)
+    return 0 if n == 0
+    return f1 if index == n
+    fib(n, f1, f0+f1, index+1)
+end

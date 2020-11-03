@@ -359,3 +359,17 @@ describe "digit_match" do
     expect(answer).must_equal 1
   end
 end
+
+describe "fib" do
+  it 'returns 0 for 0' do
+    expect(fib(0)).must_equal 0
+  end
+
+  it 'returns 3 for 4' do
+    expect(fib(4)).must_equal 3
+  end
+
+  it 'returns 89 for 11' do
+    expect(fib(11)).must_equal 89
+  end
+end
