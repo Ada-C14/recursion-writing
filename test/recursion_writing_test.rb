@@ -43,7 +43,7 @@ end
 
 describe "reverse" do
   it "will reverse 'cat'" do
-    # Arrange
+     # Arrange
     string = "cat"
 
     # Act
@@ -54,7 +54,7 @@ describe "reverse" do
   end
 
   it "will reverse 'a'" do
-    # Arrange
+     # Arrange
     string = "a"
 
     # Act
@@ -65,7 +65,7 @@ describe "reverse" do
   end
 
   it "will reverse empty string " do
-    # Arrange
+     # Arrange
     string = ""
 
     # Act
@@ -75,7 +75,7 @@ describe "reverse" do
     expect(answer).must_equal ""
   end
   it "will reverse 'apple'" do
-    # Arrange
+     # Arrange
     string = "apple"
 
     # Act
@@ -89,7 +89,7 @@ end
 
 describe "reverse_in_place" do
   it "will reverse 'cat'" do
-    # Arrange
+     # Arrange
     string = "cat"
 
     # Act
@@ -167,8 +167,8 @@ describe "bunny" do
   end
 end
 
-xdescribe "nested" do
-  it "will return true for empystring" do
+describe "nested" do
+  it "will return true for empty string" do
     # Arrange
     string = ""
 
@@ -213,7 +213,7 @@ xdescribe "nested" do
   end
 end
 
-xdescribe "search" do
+describe "search" do
   it "will return false for empty array" do
     # Arrange
     item = "a"
@@ -263,7 +263,7 @@ xdescribe "search" do
     end      
 end
 
-xdescribe "is_palindrome" do
+describe "is_palindrome" do
   it "will return true for emptystring" do
     # Arrange
     string = ""
@@ -298,7 +298,7 @@ xdescribe "is_palindrome" do
   end
 end
 
-xdescribe "digit_match" do
+describe "digit_match" do
   it "returns 4 for 1072503891 and 62530841" do
     # Arrange
     num1 = 1072503891
