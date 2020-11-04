@@ -187,8 +187,8 @@ end
 # Write a recursive method fib that accepts an integer index n as a parameter and returns the nth fibonacci number.
 # e.g. fib(4) = (0 1 1 2 3) should return 3
 # "The Fibonacci sequence is a series of numbers where a number is the addition of the last two numbers, starting with 0, and 1. "
-# Time complexity: O(n)
-# Space complexity: O(2n)? call stack increases as n increases
+# Time complexity: O(2^n) because each call needs to make 2 recursive calls
+# Space complexity: O(2^n) because each call needs to make 2 recursive calls
 def fib(n)
     if n == 0
         return 0
