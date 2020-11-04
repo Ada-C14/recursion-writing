@@ -1,27 +1,37 @@
 # Authoring recursive algorithms. Add comments including time and space complexity for each method.
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: 0(n)
+# Space complexity: 0(n)
 def factorial(n)
-    raise NotImplementedError, "Method not implemented"
+    raise ArgumentError if n <= 0
+    return 1 if n == 0
+    return n * (factorial(n-1))
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: 0(1)
+# Space complexity: 0(1)
 def reverse(s)
-    raise NotImplementedError, "Method not implemented"
+    reversed_string = ""
+    i = 0
+    while i < s.length
+        reversed_string = s[i] + reversed_string
+        i += 1
+    end
+    return reversed_string
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: 0(n)
+# Space complexity: 0(n)
 def reverse_inplace(s)
-    raise NotImplementedError, "Method not implemented"
+    return s if s == ""
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n)
+# Space complexity: O(n)
 def bunny(n)
-    raise NotImplementedError, "Method not implemented"
+    return 0 if n == 0
+    return 2 if n == 1
+    return 2 + bunny(n-1)
 end
 
 # Time complexity: ?
@@ -30,16 +40,27 @@ def nested(s)
     raise NotImplementedError, "Method not implemented"
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n)
+# Space complexity: O(n^2)
 def search(array, value)
-    raise NotImplementedError, "Method not implemented"
+    return false if array.empty?
+    if array[0] == value
+        return true
+    else
+        return search(array[1..-1], value)
+    end
 end
-
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n)
+# Space complexity: O(n)
 def is_palindrome(s)
-    raise NotImplementedError, "Method not implemented"
+    if s.length <= 1
+        return true
+    end
+
+    if s[0] != s[-1]
+        return false
+    end
+    return is_palindrome(s[1..-2])
 end
 
 # Time complexity: ?

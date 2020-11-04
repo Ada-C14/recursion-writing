@@ -10,10 +10,8 @@ describe "factorial" do
   it "will find the factorial of 0" do
     # Arrange
     num = 0
-
     # Act
     answer = factorial(num)
-
     # Assert
     expect(answer).must_equal 1
   end
@@ -21,19 +19,15 @@ describe "factorial" do
   it "will find the factorial of 5" do
     # Arrange
     num = 5
-
     # Act
     answer = factorial(num)
-
     # Assert
     expect(answer).must_equal 5*4*3*2*1
-
   end
 
   it "will raise an ArgumentError if given a number not >= 0" do
     # Arrange
     num = -1
-
     # Act-Assert
     expect {
       answer = factorial(num)
@@ -41,60 +35,50 @@ describe "factorial" do
   end
 end
 
-describe "reverse" do
-  it "will reverse 'cat'" do
-    # Arrange
-    string = "cat"
-
-    # Act
-    answer = reverse(string)
-
-    # Assert
-    expect(answer).must_equal "tac"
-  end
-
-  it "will reverse 'a'" do
-    # Arrange
-    string = "a"
-
-    # Act
-    answer = reverse(string)
-
-    # Assert
-    expect(answer).must_equal "a"
-  end
-
-  it "will reverse empty string " do
-    # Arrange
-    string = ""
-
-    # Act
-    answer = reverse(string)
-
-    # Assert
-    expect(answer).must_equal ""
-  end
-  it "will reverse 'apple'" do
-    # Arrange
-    string = "apple"
-
-    # Act
-    answer = reverse(string)
-
-    # Assert
-    expect(answer).must_equal "elppa"
-  end
-end
+# describe "reverse" do
+#   it "will reverse 'cat'" do
+#     # Arrange
+#     string = "cat"
+#     # Act
+#     answer = reverse(string)
+#     # Assert
+#     expect(answer).must_equal "tac"
+#   end
+#
+#   it "will reverse 'a'" do
+#     # Arrange
+#     string = "a"
+#     # Act
+#     answer = reverse(string)
+#     # Assert
+#     expect(answer).must_equal "a"
+#   end
+#
+#   it "will reverse empty string " do
+#     # Arrange
+#     string = ""
+#     # Act
+#     answer = reverse(string)
+#     # Assert
+#     expect(answer).must_equal ""
+#   end
+#   it "will reverse 'apple'" do
+#     # Arrange
+#     string = "apple"
+#     # Act
+#     answer = reverse(string)
+#     # Assert
+#     expect(answer).must_equal "elppa"
+#   end
+# end
 
 
 describe "reverse_in_place" do
   it "will reverse 'cat'" do
     # Arrange
     string = "cat"
-
     # Act
     answer = reverse_inplace(string)
-
     # Assert
     expect(answer).must_equal "tac"
   end
@@ -102,10 +86,8 @@ describe "reverse_in_place" do
   it "will reverse 'a'" do
     # Arrange
     string = "a"
-
     # Act
     answer = reverse_inplace(string)
-
     # Assert
     expect(answer).must_equal "a"
   end
@@ -113,20 +95,16 @@ describe "reverse_in_place" do
   it "will reverse empty string " do
     # Arrange
     string = ""
-
     # Act
     answer = reverse_inplace(string)
-
     # Assert
     expect(answer).must_equal ""
   end
   it "will reverse 'apple'" do
     # Arrange
     string = "apple"
-
     # Act
     answer = reverse_inplace(string)
-
     # Assert
     expect(answer).must_equal "elppa"
   end
@@ -136,10 +114,8 @@ describe "bunny" do
   it "returns 0 for 0 bunnies" do
     # Arrange
     count = 0
-
     # Act
     answer = bunny(count)
-
     # Assert
     expect(answer).must_equal 0
   end
@@ -147,10 +123,8 @@ describe "bunny" do
   it "returns 2 for 1 bunny" do
     # Arrange
     count = 1
-
     # Act
     answer = bunny(count)
-
     # Assert
     expect(answer).must_equal 2
   end
@@ -158,11 +132,9 @@ describe "bunny" do
   it "returns 100 for 50 bunnies" do
     # Arrange
     count = 50
-
     # Act
     answer = bunny(count)
-
-    # Assert
+    #Assert
     expect(answer).must_equal 100
   end
 end
@@ -171,10 +143,8 @@ xdescribe "nested" do
   it "will return true for empystring" do
     # Arrange
     string = ""
-
     # Act
     answer = nested(string)
-
     # Assert
     expect(answer).must_equal true
   end
@@ -182,10 +152,8 @@ xdescribe "nested" do
   it "will return true for a nested series of parens" do
     # Arrange
     string = "((()))"
-
     # Act
     answer = nested(string)
-
     # Assert
     expect(answer).must_equal true
   end
@@ -193,10 +161,8 @@ xdescribe "nested" do
   it "will return false for a nested series of parens" do
     # Arrange
     string = "(()))"
-
     # Act
     answer = nested(string)
-
     # Assert
     expect(answer).must_equal false
   end
@@ -204,24 +170,20 @@ xdescribe "nested" do
   it "will return false for an even length improperly nested series of parens" do
     # Arrange
     string = "(())))"
-
     # Act
     answer = nested(string)
-
     # Assert
     expect(answer).must_equal false
   end
 end
 
-xdescribe "search" do
+describe "search" do
   it "will return false for empty array" do
     # Arrange
     item = "a"
     array = []
-
     # Act
     answer = search(array, item)
-
     # Assert
     expect(answer).must_equal false
   end
@@ -230,10 +192,8 @@ xdescribe "search" do
   # Arrange
   item = "a"
   array = ["b", "c", "a"]
-
   # Act
   answer = search(array, item)
-
   # Assert
   expect(answer).must_equal true
   end
@@ -242,10 +202,8 @@ xdescribe "search" do
     # Arrange
     item = "x"
     array = ["b", "c", "a"]
-  
     # Act
     answer = search(array, item)
-  
     # Assert
     expect(answer).must_equal false
     end
@@ -254,23 +212,19 @@ xdescribe "search" do
       # Arrange
       item = "b"
       array = ["b", "c", "a"]
-    
       # Act
       answer = search(array, item)
-    
       # Assert
       expect(answer).must_equal true
     end      
 end
 
-xdescribe "is_palindrome" do
+describe "is_palindrome" do
   it "will return true for emptystring" do
     # Arrange
     string = ""
-
     # Act
     answer = is_palindrome(string)
-
     # Assert
     expect(answer).must_equal true
   end
@@ -278,10 +232,8 @@ xdescribe "is_palindrome" do
   it "will return true for a palindrome" do
     # Arrange
     string = "racecar"
-
     # Act
     answer = is_palindrome(string)
-
     # Assert
     expect(answer).must_equal true
   end
@@ -289,10 +241,8 @@ xdescribe "is_palindrome" do
   it "will return false for a nonpalindrome" do
     # Arrange
     string = "raecar"
-
     # Act
     answer = is_palindrome(string)
-
     # Assert
     expect(answer).must_equal false
   end
