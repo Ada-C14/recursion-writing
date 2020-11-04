@@ -50,17 +50,18 @@ def search(array, value, i = 0)
     return false if i >= array.length
     return search(array, value, i + 1)
 
-
 end
 
 # Time complexity: ?
 # Space complexity: ?
 def is_palindrome(s)
-    raise NotImplementedError, "Method not implemented"
+    return true if s == "" || s.length < 2
+    return false if s[0] != s[-1]
+        return is_palindrome(s[1..-2])
 end
 
 # Time complexity: ?
 # Space complexity: ?
 def digit_match(n, m)
-    raise NotImplementedError, "Method not implemented"
+
 end
