@@ -64,13 +64,12 @@ end
 
 # Time complexity: O(n)
 # Space complexity: O(n)
-def search(array, value)
-  # c = -1
-  # c += 1
-  # return false if array.length == c
-  # return true if value == array[c]
-  #
-  # return search(array, value)
+def search(array, value, c = 0)
+
+  return false if array.length == c
+  return true if value == array[c]
+
+  return search(array, value, c + 1)
 end
 
 # Time complexity: O(n
