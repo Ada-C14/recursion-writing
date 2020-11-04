@@ -95,8 +95,8 @@ def digit_match(n, m, num_matches = 0)
     end
 end
 
-# Time complexity: O(n)
-# Space complexity: O(n)
+# Time complexity: O(2^n); each fib makes two recursive calls
+# Space complexity: O(2^n)
 def fib(n)
     raise ArgumentError if n < 0
 
