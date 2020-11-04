@@ -9,8 +9,8 @@ def factorial(n)
 
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n^2)
+# Space complexity: O(n^2)
 def reverse(s, i = 1)
     return s if s == "" || s.length < 2
     reversed = reverse(s[1..-1])
@@ -25,8 +25,9 @@ def reverse_inplace(s)
     return s[-1] + reverse_inplace(s[1..-2]) + s[0]
 end
 
-# Time complexity: ?
-# Space complexity: ?
+
+# Time complexity: O(n)
+# Space complexity: O(n)
 def bunny(n)
     return 0 if n <= 0
     return 2 + bunny(n - 1)
@@ -63,5 +64,5 @@ end
 # Time complexity: ?
 # Space complexity: ?
 def digit_match(n, m)
-
+    puts "Sorry, I couldn't figure this one out!"
 end
