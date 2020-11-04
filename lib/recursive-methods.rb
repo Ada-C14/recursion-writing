@@ -155,7 +155,7 @@ end
 # The method should return 4 in this case because 4 of these pairs match (2-2, 5-5, 8-8, and 1-1).
 
 # Time complexity: O(log n)
-# Space complexity: O(n) call stack increases as n increases
+# Space complexity: O(log n)? call stack increases as n increases
 def digit_match(n, m)
     return 1 if m == 0 && n == 0
 
@@ -187,8 +187,8 @@ end
 # Write a recursive method fib that accepts an integer index n as a parameter and returns the nth fibonacci number.
 # e.g. fib(4) = (0 1 1 2 3) should return 3
 # "The Fibonacci sequence is a series of numbers where a number is the addition of the last two numbers, starting with 0, and 1. "
-# Time complexity: O(log n)
-# Space complexity: O(n) call stack increases as n increases
+# Time complexity: O(n)
+# Space complexity: O(2n)? call stack increases as n increases
 def fib(n)
     if n == 0
         return 0
