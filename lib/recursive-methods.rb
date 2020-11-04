@@ -56,7 +56,13 @@ end
 # Time complexity: ?
 # Space complexity: ?
 def bunny(n)
-  raise NotImplementedError, "Method not implemented"
+  if n == 0
+    return 0
+  elsif n == 1
+    return 2
+  else
+    return n + bunny(n / 2) 
+  end
 end
 
 # Time complexity: ?
