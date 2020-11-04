@@ -9,7 +9,9 @@ def factorial(n)
     return n * factorial(n - 1)
 end
 
-# Time complexity: O(n); an operation is completed for each stack frame
+# Time complexity: O(n^2)
+# >> an operation is completed for each stack frame
+# >> creation of new string in each recursive call
 # Space complexity: O(n^2)
 # >> system stack will include as many stack frames as there are letters in the string
 # >> we create a new string that is (n-i) length each time recursive case is hit; where i is the stack frame level
