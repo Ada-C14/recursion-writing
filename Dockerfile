@@ -13,7 +13,7 @@ WORKDIR /app
 ARG SUBMISSION_SUBFOLDER
 ADD $SUBMISSION_SUBFOLDER /app
 
-
+RUN rm *.lock
 COPY ./Gemfile .
 RUN gem install bundler
 RUN bundle install
