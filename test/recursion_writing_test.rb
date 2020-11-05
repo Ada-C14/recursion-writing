@@ -168,7 +168,7 @@ describe "bunny" do
 end
 
 describe "nested" do
-  it "will return true for empystring" do
+  it "will return true for empty string" do
     # Arrange
     string = ""
 
@@ -179,7 +179,7 @@ describe "nested" do
     expect(answer).must_equal true
   end
 
-  xit "will return true for a nested series of parens" do
+  it "will return true for a nested series of parens" do
     # Arrange
     string = "((()))"
 
@@ -298,7 +298,7 @@ describe "is_palindrome" do
   end
 end
 
-xdescribe "digit_match" do
+describe "digit_match" do
   it "returns 4 for 1072503891 and 62530841" do
     # Arrange
     num1 = 1072503891

@@ -3,8 +3,8 @@
 # Time complexity: O(n)
 # Space complexity: O(n)
 def factorial(n)
-  raise ArgumentError, "Please pick positive integer" if n < 0
-  return 1 if n == 0
+  raise ArgumentError, "Please pick positive integer" if n.negative?
+  return 1 if n.zero?
   n * factorial(n - 1)
 end
 
@@ -17,27 +17,21 @@ end
 
 # Time complexity: O(n)
 # Space complexity: O(n)
-def reverse_inplace(s)
-  return s if s.length <= 1
+def reverse_inplace(s, i = 0, j = s.length - 1)
+  return s if s.length <= 1 || i == j
 
-  i = -1
-  j = s.length
-
-  until i == j
-    i += 1
-    j -= 1
     temp = s[i]
     s[i] = s[j]
     s[j] = temp
-  end
-  return s if i == j
-  reverse_inplace(s)
+
+
+  reverse_inplace(s, i + 1, j - 1)
 end
 
 # Time complexity: O(n)
 # Space complexity: O(n)
 def bunny(n)
-  return 0 if n == 0
+  return 0 if n.zero?
   2 + bunny(n - 1)
 end
 
@@ -47,19 +41,10 @@ def nested(s)
   return false if s.length.odd?
   return true if s == ""
 
-  i = -1
-  j = s.length
-
-  s[i] == "(" && s[j] == ")" ? true : false
-
-  until i == j
-    i += 1
-    j -= 1
-    return false if s["i"] == s["j"]
-  end
+  return false unless s[0] == "(" && s[s.length - 1] == ")"
 
 
-  return nested(s)
+  return nested(s[1..-2])
 end
 
 # Time complexity: O(n)
@@ -76,20 +61,23 @@ end
 # Space complexity: O(n)
 def is_palindrome(s)
   return true if s.length < 2
-  i = -1
-  j = s.length
-  until i == j
-    i += 1
-    j -= 1
-    return false if s[i] != s[j]
-  end
-  return true if s[i] == s[j]
 
-  return is_palindrome(s)
+  return false unless s[0] == s[s.length - 1]
+
+  return is_palindrome(s[1..-2])
 end
 
 # Time complexity: ?
 # Space complexity: ?
-def digit_match(n, m)
-  raise NotImplementedError, "Method not implemented"
+def digit_match(n, m, c = 0)
+
+  if n.negative? || m.negative?
+    raise ArgumentError, "Please pick positive integer"
+  end
+
+  c += n%10 == m%10 ? 1 : 0
+
+  return c if (n/10).zero? || (m/10).zero?
+
+  return digit_match(n/10, m/10, c)
 end
