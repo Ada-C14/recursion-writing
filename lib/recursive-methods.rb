@@ -32,8 +32,8 @@ def reverse_inplace(s)
     end
 end
 #
-# # Time complexity: ?
-# # Space complexity: ?
+# # Time complexity: O(n)
+# # Space complexity: O(n)
 def bunny(n)
     if n == 0
         return 0
