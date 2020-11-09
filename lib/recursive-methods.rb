@@ -42,11 +42,18 @@ def bunny(n)
     end
 end
 #
-# # Time complexity: ?
-# # Space complexity: ?
-# def nested(s)
-#     raise NotImplementedError, "Method not implemented"
-# end
+# # Time complexity: O(n^2) * not sure about this one
+# # Space complexity: O(n^2) * same here?
+def nested(s)
+    if s == ""
+        return true
+    elsif
+    s[0] == "(" && s[-1] == ")"
+        return nested(s[1..-2])
+    else
+        return false
+    end
+end
 #
 # # Time complexity: ?
 # # Space complexity: ?
