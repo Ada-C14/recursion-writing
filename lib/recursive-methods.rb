@@ -22,11 +22,15 @@ def reverse(s)
     end
 end
 
-# # Time complexity: ?
-# # Space complexity: ?
-# def reverse_inplace(s)
-#     raise NotImplementedError, "Method not implemented"
-# end
+# # Time complexity: O(1)
+# # Space complexity: O(1)
+def reverse_inplace(s)
+    if s.length <= 1
+        return s
+    else
+        return s.reverse!
+    end
+end
 #
 # # Time complexity: ?
 # # Space complexity: ?
