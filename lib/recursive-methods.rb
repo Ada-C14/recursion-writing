@@ -4,7 +4,7 @@
 # Space complexity: O(n)
 def factorial(n)
     if n == 0
-        return 100
+        return 1
     elsif n < 0
         raise ArgumentError
     else
