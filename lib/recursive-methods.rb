@@ -66,10 +66,6 @@ def is_palindrome(s, length = s.length, pointer = 0)
     return is_palindrome(s, length, pointer + 1)
 end
 
-# Time complexity: O(n), where n is the length of the shorter string
-# Space complexity: O(n), where n is the length of the shorter string
 def digit_match(n, m, pointer = -1, matches = 0)
-    return matches if (pointer).abs > n.to_s.length || (pointer).abs > m.to_s.length
-    return digit_match(n, m, pointer - 1, matches + 1) if n.to_s[pointer] == m.to_s[pointer]
-    return digit_match(n, m, pointer - 1, matches) if n.to_s[pointer] != m.to_s[pointer]
+
 end
