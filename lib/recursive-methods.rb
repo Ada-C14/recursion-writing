@@ -53,17 +53,16 @@ def reverse_in_place(s)
   reverse_in_place_helper(s, 0)
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n)
+# Space complexity: O(n)
 def bunny(n)
   if n == 0
     return 0
-  elsif n == 1
-    return 2
   else
-    return n + bunny(n / 2) 
+    return 2 + bunny(n - 1) 
   end
 end
+
 
 # Time complexity: ?
 # Space complexity: ?
