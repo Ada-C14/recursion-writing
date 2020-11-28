@@ -1,5 +1,5 @@
 # Starting from a minimalist image
-FROM ruby:2.7
+FROM ruby:2.6
 # Reference for help contact me
 LABEL maintainer="chris@adadev.org"
 
@@ -13,7 +13,7 @@ WORKDIR /app
 ARG SUBMISSION_SUBFOLDER
 ADD $SUBMISSION_SUBFOLDER /app
 
-RUN rm *.lock
+
 COPY ./Gemfile .
 RUN gem install bundler
 RUN bundle install
