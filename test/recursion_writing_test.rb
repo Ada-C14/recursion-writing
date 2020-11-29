@@ -1,10 +1,9 @@
-require 'minitest/autorun'
-require 'minitest/reporters'
+require "minitest/autorun"
+require "minitest/reporters"
 require "minitest/skip_dsl"
-require_relative '../lib/recursive-methods'
+require_relative "../lib/recursive-methods"
 
 Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
-
 
 describe "factorial" do
   it "will find the factorial of 0" do
@@ -26,8 +25,7 @@ describe "factorial" do
     answer = factorial(num)
 
     # Assert
-    expect(answer).must_equal 5*4*3*2*1
-
+    expect(answer).must_equal 5 * 4 * 3 * 2 * 1
   end
 
   it "will raise an ArgumentError if given a number not >= 0" do
@@ -86,14 +84,13 @@ describe "reverse" do
   end
 end
 
-
 describe "reverse_in_place" do
   it "will reverse 'cat'" do
     # Arrange
     string = "cat"
 
     # Act
-    answer = reverse_inplace(string)
+    answer = reverse_in_place(string)
 
     # Assert
     expect(answer).must_equal "tac"
@@ -104,7 +101,7 @@ describe "reverse_in_place" do
     string = "a"
 
     # Act
-    answer = reverse_inplace(string)
+    answer = reverse_in_place(string)
 
     # Assert
     expect(answer).must_equal "a"
@@ -115,7 +112,7 @@ describe "reverse_in_place" do
     string = ""
 
     # Act
-    answer = reverse_inplace(string)
+    answer = reverse_in_place(string)
 
     # Assert
     expect(answer).must_equal ""
@@ -125,7 +122,7 @@ describe "reverse_in_place" do
     string = "apple"
 
     # Act
-    answer = reverse_inplace(string)
+    answer = reverse_in_place(string)
 
     # Assert
     expect(answer).must_equal "elppa"
@@ -227,40 +224,40 @@ xdescribe "search" do
   end
 
   it "will return true when looking for something in the array" do
-  # Arrange
-  item = "a"
-  array = ["b", "c", "a"]
+    # Arrange
+    item = "a"
+    array = ["b", "c", "a"]
 
-  # Act
-  answer = search(array, item)
+    # Act
+    answer = search(array, item)
 
-  # Assert
-  expect(answer).must_equal true
+    # Assert
+    expect(answer).must_equal true
   end
 
   it "will return false when looking for something not in the array" do
     # Arrange
     item = "x"
     array = ["b", "c", "a"]
-  
+
     # Act
     answer = search(array, item)
-  
+
     # Assert
     expect(answer).must_equal false
-    end
+  end
 
-    it "will return true when finding something at the front of the array" do
-      # Arrange
-      item = "b"
-      array = ["b", "c", "a"]
-    
-      # Act
-      answer = search(array, item)
-    
-      # Assert
-      expect(answer).must_equal true
-    end      
+  it "will return true when finding something at the front of the array" do
+    # Arrange
+    item = "b"
+    array = ["b", "c", "a"]
+
+    # Act
+    answer = search(array, item)
+
+    # Assert
+    expect(answer).must_equal true
+  end
 end
 
 xdescribe "is_palindrome" do
@@ -334,7 +331,7 @@ xdescribe "digit_match" do
     # Assert
     expect(answer).must_equal 3
   end
-  
+
   it "returns 1 for (0, 0)" do
     # Arrange
     num1 = 0
@@ -346,7 +343,7 @@ xdescribe "digit_match" do
     # Assert
     expect(answer).must_equal 1
   end
-  
+
   it "returns 1 for (10, 20)" do
     # Arrange
     num1 = 10
