@@ -66,7 +66,13 @@ end
 # Time complexity: ?
 # Space complexity: ?
 def search(array, value)
-    raise NotImplementedError, "Method not implemented"
+    return false if array.length == 0
+    if array[0] == value
+        return true
+    else
+        search(array[1..-1], value)
+    end
+    return false
 end
 
 # Time complexity: O(n)
@@ -89,8 +95,16 @@ def palindrome_helper(i,j,string)
     end
 end
 
-# Time complexity: O(n^2)
-# Space complexity: O(n^2)
+# Time complexity: O(nm)
+# Space complexity: O(nm)
 def digit_match(n, m)
-    raise NotImplementedError, "Method not implemented"
+    matches = 0
+    if n%10 == m%10
+        matches += 1
+    end
+    if n < 10 || m < 10
+        return matches
+    else
+        digit_match(n/10,m/10)
+    end
 end
