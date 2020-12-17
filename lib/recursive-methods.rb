@@ -1,33 +1,66 @@
 # Authoring recursive algorithms. Add comments including time and space complexity for each method.
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n)
+# Space complexity: O(n)
 def factorial(n)
-    raise NotImplementedError, "Method not implemented"
+    raise ArgumentError if n < 0
+    if n <= 1
+        return 1
+    else
+        return n * factorial(n-1)
+    end
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n)
+# Space complexity: O(n^2)
 def reverse(s)
-    raise NotImplementedError, "Method not implemented"
+    if s.length <= 1
+        return s
+    else
+        return s[-1] + reverse(s.chop)
+    end
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n)
+# Space complexity: O(n)
 def reverse_inplace(s)
-    raise NotImplementedError, "Method not implemented"
+    reverse_helper(0, s.length - 1, s)
+    return s
 end
 
-# Time complexity: ?
-# Space complexity: ?
+def reverse_helper(i,j, string)
+    if i < j
+        temp = string[i]
+        string[i] = string[j]
+        string[j] = temp
+        reverse_helper(i + 1, j - 1, string)
+    end
+end
+
+# Time complexity: O(n)
+# Space complexity: O(n)
 def bunny(n)
-    raise NotImplementedError, "Method not implemented"
+    if n <= 0
+        return 0
+    else
+        return 2 + bunny(n-1)
+    end
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n)
+# Space complexity: O(n)
 def nested(s)
-    raise NotImplementedError, "Method not implemented"
+    nested_helper(0, s.length - 1, s)
+end
+
+def nested_helper(i,j, string)
+    if i > j
+        return true
+    elsif string[i] == '(' && string[j] == ')'
+        return nested_helper(i + 1, j - 1, string)
+    else
+        return false
+    end
 end
 
 # Time complexity: ?
@@ -42,8 +75,8 @@ def is_palindrome(s)
     raise NotImplementedError, "Method not implemented"
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n^2)
+# Space complexity: O(n^2)
 def digit_match(n, m)
     raise NotImplementedError, "Method not implemented"
 end
