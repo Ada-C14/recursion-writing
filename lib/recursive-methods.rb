@@ -11,7 +11,7 @@ def factorial(n)
     end
 end
 
-# Time complexity: O(n)
+# Time complexity: O(n^2)
 # Space complexity: O(n^2)
 def reverse(s)
     if s.length <= 1
@@ -63,14 +63,14 @@ def nested_helper(i,j, string)
     end
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n^2)
+# Space complexity: O(n^2)
 def search(array, value)
     return false if array.length == 0
     if array[0] == value
         return true
     else
-        search(array[1..-1], value)
+        return search(array[1..-1], value)
     end
     return false
 end
@@ -95,16 +95,17 @@ def palindrome_helper(i,j,string)
     end
 end
 
-# Time complexity: O(nm)
-# Space complexity: O(nm)
+# Time complexity: O(logn)
+# Space complexity: O(logn)
 def digit_match(n, m)
-    matches = 0
-    if n%10 == m%10
-        matches += 1
+    if n == 0 && m == 0
+        return 1
+    elsif n <= 1 || m <= 1
+        return 0
     end
-    if n < 10 || m < 10
-        return matches
+    if n%10 == m%10
+        return 1 + digit_match(n/10, m/10)
     else
-        digit_match(n/10,m/10)
+        return digit_match(n/10, m/10)
     end
 end
