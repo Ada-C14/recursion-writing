@@ -69,10 +69,24 @@ def search(array, value)
     raise NotImplementedError, "Method not implemented"
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n)
+# Space complexity: O(n)
 def is_palindrome(s)
-    raise NotImplementedError, "Method not implemented"
+    if s.length < 2
+        return true
+    else
+        palindrome_helper(0,s.length - 1, s)
+    end
+end
+
+def palindrome_helper(i,j,string)
+    if i > j
+        return true
+    elsif string[i] == string[j]
+        palindrome_helper(i+1, j-1, string)
+    else
+        return false
+    end
 end
 
 # Time complexity: O(n^2)
