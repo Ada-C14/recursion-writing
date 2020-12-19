@@ -17,10 +17,10 @@ end
 # Time complexity: O(n^2)
 # Space complexity: O(n^2)
 def reverse(s)
-  if s.length == 0
+  if s.length == 0 || s.length == 1
     return s
-  elsif s[s.length-1] + reverse(s[0, s.length - 1])
   end
+    return s[s.length-1] + reverse(s[0, s.length - 1])
 end
 
 # Time complexity: O(n^2)
@@ -119,15 +119,6 @@ end
 
 # Time complexity: O(n^2)
 # Space complexity: O(n^2)
-def fib(n)
-  if n.zero?
-    return 0
-  elsif n == 1
-    return 1
-  else
-    return (fib(n-1) + fib(n-2))
-  end
-end
 
 
 
