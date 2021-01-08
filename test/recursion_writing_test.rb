@@ -93,10 +93,10 @@ describe "reverse_in_place" do
     string = "cat"
 
     # Act
-    answer = reverse_inplace(string)
+    reverse_inplace(string)
 
     # Assert
-    expect(answer).must_equal "tac"
+    expect(string).must_equal "tac"
   end
 
   it "will reverse 'a'" do
@@ -104,10 +104,10 @@ describe "reverse_in_place" do
     string = "a"
 
     # Act
-    answer = reverse_inplace(string)
+    reverse_inplace(string)
 
     # Assert
-    expect(answer).must_equal "a"
+    expect(string).must_equal "a"
   end
 
   it "will reverse empty string " do
@@ -115,20 +115,20 @@ describe "reverse_in_place" do
     string = ""
 
     # Act
-    answer = reverse_inplace(string)
+    reverse_inplace(string)
 
     # Assert
-    expect(answer).must_equal ""
+    expect(string).must_equal ""
   end
   it "will reverse 'apple'" do
     # Arrange
     string = "apple"
 
     # Act
-    answer = reverse_inplace(string)
+    reverse_inplace(string)
 
     # Assert
-    expect(answer).must_equal "elppa"
+    expect(string).must_equal "elppa"
   end
 end
 
@@ -167,7 +167,7 @@ describe "bunny" do
   end
 end
 
-xdescribe "nested" do
+describe "nested" do
   it "will return true for empystring" do
     # Arrange
     string = ""
@@ -213,7 +213,7 @@ xdescribe "nested" do
   end
 end
 
-xdescribe "search" do
+describe "search" do
   it "will return false for empty array" do
     # Arrange
     item = "a"
@@ -263,7 +263,7 @@ xdescribe "search" do
     end      
 end
 
-xdescribe "is_palindrome" do
+describe "is_palindrome" do
   it "will return true for emptystring" do
     # Arrange
     string = ""
@@ -298,7 +298,7 @@ xdescribe "is_palindrome" do
   end
 end
 
-xdescribe "digit_match" do
+describe "digit_match" do
   it "returns 4 for 1072503891 and 62530841" do
     # Arrange
     num1 = 1072503891
@@ -358,4 +358,33 @@ xdescribe "digit_match" do
     # Assert
     expect(answer).must_equal 1
   end
+end
+
+describe "fib" do
+
+  before do
+    @fib_nums = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181, 6765, 10946, 17711, 28657, 46368, 75025, 121393, 196418, 317811, 514229, 832040, 1346269, 2178309, 3524578, 5702887, 9227465, 14930352, 24157817, 39088169, 63245986, 102334155]
+  end
+
+  it "returns a 0 for 0" do
+    answer = fib(0)
+    expect(answer).must_equal 0
+  end
+
+  it "returns a 1 for 1" do
+    answer = fib(1)
+    expect(answer).must_equal 1
+  end
+
+  it "returns the correct fibonacci number" do
+    num = 8
+    answer = fib(num)
+    expect(answer).must_equal @fib_nums[num]
+  end
+
+  it "raises an error for a negative number" do
+    expect { fib(-34) }.must_raise ArgumentError
+  end
+
+
 end
