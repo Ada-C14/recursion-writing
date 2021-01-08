@@ -74,6 +74,7 @@ describe "reverse" do
     # Assert
     expect(answer).must_equal ""
   end
+
   it "will reverse 'apple'" do
     # Arrange
     string = "apple"
@@ -167,8 +168,8 @@ describe "bunny" do
   end
 end
 
-xdescribe "nested" do
-  it "will return true for empystring" do
+describe "nested" do
+  it "will return true for empty string" do
     # Arrange
     string = ""
 
@@ -213,7 +214,7 @@ xdescribe "nested" do
   end
 end
 
-xdescribe "search" do
+describe "search" do
   it "will return false for empty array" do
     # Arrange
     item = "a"
@@ -263,8 +264,8 @@ xdescribe "search" do
     end      
 end
 
-xdescribe "is_palindrome" do
-  it "will return true for emptystring" do
+describe "is_palindrome" do
+  it "will return true for empty string" do
     # Arrange
     string = ""
 
@@ -298,7 +299,7 @@ xdescribe "is_palindrome" do
   end
 end
 
-xdescribe "digit_match" do
+describe "digit_match" do
   it "returns 4 for 1072503891 and 62530841" do
     # Arrange
     num1 = 1072503891
@@ -357,5 +358,23 @@ xdescribe "digit_match" do
 
     # Assert
     expect(answer).must_equal 1
+  end
+end
+
+describe "fib" do
+  it "raises an argument error for negative numbers" do
+    test = -1
+    expect{ fib(test) }.must_raise ArgumentError
+  end
+
+  it "returns the correct nth number in fib sequence" do
+    test = 0
+    expect(fib(test)).must_equal 0
+
+    test = 5
+    expect(fib(test)).must_equal 5
+
+    test = 25
+    expect(fib(test)).must_equal 75025
   end
 end
