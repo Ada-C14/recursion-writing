@@ -167,7 +167,7 @@ describe "bunny" do
   end
 end
 
-xdescribe "nested" do
+describe "nested" do
   it "will return true for empystring" do
     # Arrange
     string = ""
@@ -213,7 +213,7 @@ xdescribe "nested" do
   end
 end
 
-xdescribe "search" do
+describe "search" do
   it "will return false for empty array" do
     # Arrange
     item = "a"
@@ -242,10 +242,10 @@ xdescribe "search" do
     # Arrange
     item = "x"
     array = ["b", "c", "a"]
-  
+
     # Act
     answer = search(array, item)
-  
+
     # Assert
     expect(answer).must_equal false
     end
@@ -254,16 +254,16 @@ xdescribe "search" do
       # Arrange
       item = "b"
       array = ["b", "c", "a"]
-    
+
       # Act
       answer = search(array, item)
-    
+
       # Assert
       expect(answer).must_equal true
-    end      
+    end
 end
 
-xdescribe "is_palindrome" do
+describe "is_palindrome" do
   it "will return true for emptystring" do
     # Arrange
     string = ""
@@ -298,7 +298,7 @@ xdescribe "is_palindrome" do
   end
 end
 
-xdescribe "digit_match" do
+describe "digit_match" do
   it "returns 4 for 1072503891 and 62530841" do
     # Arrange
     num1 = 1072503891
@@ -334,7 +334,7 @@ xdescribe "digit_match" do
     # Assert
     expect(answer).must_equal 3
   end
-  
+
   it "returns 1 for (0, 0)" do
     # Arrange
     num1 = 0
@@ -346,7 +346,7 @@ xdescribe "digit_match" do
     # Assert
     expect(answer).must_equal 1
   end
-  
+
   it "returns 1 for (10, 20)" do
     # Arrange
     num1 = 10
